@@ -1,0 +1,32 @@
+introduction:
+---------------------------------
+frontEnd
+Angular, Next.js, Tailwind
+
+
+BackEnd:
+Django Rest Framwork DRF
+Docker, Postgresql
+
+
+Deployment:
+Channel for live caht
+Deploy on Degital Ocean/AWS
+---------------------------------------------
+create a  git repo and  add these:
+
+git init
+git add README.md
+git branch -M main
+git remote add origin https://github.com/MojiJokar/Django_Airbnb.git
+git push -u origin main
+
+cd frontEnd
+
+
+
+
+
+
+
+  
