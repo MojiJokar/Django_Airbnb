@@ -58,13 +58,16 @@ Navbar we make something and add it in main layout.tsx
 refresh page , it comes 
 Navbar.tsx > add in >> layout.tsx
 
+Logo:
 develop navbar with spaces and foto 
 put a foto in  this directory : front/air_bnb/public/
 
-
+Include searchFilter into Navbar.tsx
+create a  searchFilter.tsx
+add it in Navbar.tsx
 
 Make searchFilter.tsx
 heroicon.com for menu search:
 https://heroicons.com/
 
-
+to complete Navbar we add usernav.tsxadd|Propertybutton.tsx inside Navbar
