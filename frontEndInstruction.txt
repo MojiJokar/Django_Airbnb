@@ -37,6 +37,34 @@ v24.21.0
 √ Would you like to include AGENTS.md to guide coding agents to write up-to-date Next.js code? ... No / Yes
 Creating a new Next.js app in C:\Users\mmb20\OneDrive\Desktop\PROJECTS\Django_bnb\frontEnd\air_bnb.
 
+RUN SERVER|:
+PROJECTS\Django_bnb\frontEnd\air_bnb> npm run dev
+http://localhost:3000
 
+Navbar:------------------------------------------------------------------------------------
+app >> components/Navbar/Navbar.tsx, searchFilter.tsx
+
+layout.tsx
+we have some changes in layout.tsxtitle for Metadata
+
+page.tsx
+to use whole site clearn all between first and last main,here we include our propertylist, categori and other components to be visible 
+
+component>Navbar.tsx>layout.tsx
+Navbar.tsx  > layout.tsx
+under app create a  folder component  , they are reusable small pieces of code 
+components,Navbar.tsx, searchFilter.tsx
+Navbar we make something and add it in main layout.tsx
+refresh page , it comes 
+Navbar.tsx > add in >> layout.tsx
+
+develop navbar with spaces and foto 
+put a foto in  this directory : front/air_bnb/public/
+
+
+
+Make searchFilter.tsx
+heroicon.com for menu search:
+https://heroicons.com/
 
 
