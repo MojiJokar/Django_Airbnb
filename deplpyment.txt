@@ -1,0 +1,127 @@
+1. setting up github
+2.create sever on didgital ocean and set it up 
+3.Backend
+-create Environment
+-get code from git
+-Rest of server stuff
+4.Frontend
+-Node, nginx
+-get code from git 
+5.
+---------------------------------------------------
+1. After we have running our do , whatever changes we do we can do it from one terminal connected to our git and in the end git push, in other terminal which is our indie 
+ubuntu do,  we can clone all for  final changes or git pull 
+
+
+website, you type ==> connects to nginx <nginx connects to DO ubuntu >
+browers =>nginx-> do ip 
+bowser -> 642229:13337
+
+2.create sever on didgital ocean and set it up (as i understood do  gives you a IP :1337"your nginx port " the ip given by do will be renamed to your website )
+---------------------------------------------------
+* whatever we do in our project in future we can do it from our do code and not from local 
+DIGITAL OCEAN LINK:
+https://m.do.co/c/d3cdd4293e67
+
+Or try UpCloud ($250 in credit / 14 day trial):
+https://signup.upcloud.com/?promo=aff...
+
+click on blue button written :create a server , Droplets: virtual priavre serverand node, choose these: 
+Frankfurt ubuntu 22.04 LTS long term support, CPU size Rugular , "password", hostname as you wish project name your choisce: click on button =>  create
+
+after its finished , copy IP give and back to terminal:
+-windows : on Putty you paste the  ip address given 
+-also try ssh root@IP address given 
+yes
+asks the "password" we gave 
+apt update
+
+
+* add gunicorn in youir requirements because during work you will get error !!!
+
+3.Backend
+-create Environment(install docker-compose), set up a docker-compose for Prod
+inside the droplet server environemtn install (which we choice ubuntu ): apt install docker-compose, to test its installed taype $docker, you will see all info 
+set up docker-compose for prod: docker-compose.prod.yml ==> add nginx in services list 
+
+info : nginx is a web server  program
+you can connect and use for your users but your router, isp, security and all when we need for your website here we need Digital ocean or aws
+change the docker-compose old for the new production 
+in main setting  also must chnge for debug and the port we got from DO
+ add websit_rul :http port of Do  to  nginx : 1337
+add in cors alolowd origin  the same http we add above : do ip add:1337
+also the same ips copy above change name into cors trusted origin 
+copy the last one  and rename it to :  cors origin whitelist 
+in backend folder create a  folder nginx and create dockerfile : here we want to instal nginx on the server
+near dockerfile create a nginx.conf
+
+(as i can see from the project , two docer compose near , one folder ngind inside it dockerfile and ginx.conf )
+nginx, .env.dev. .gitignore, readme dockercompose  and a all front and back folder 
+
+git commit , push 0
+
+[ from inside the ubunt server we clone the git and if we change anything in our code, the same add. commit push must be done , it is inside the ubunt do server  connected to github]
+-get a code from git :
+inside the server do  where we are already on the root folder inside ubuntu 
+make a new folder mkdir name , cd in it , git clone all your git copy here : git clone  https://.........git 
+cd in that folder , youll see all your project created ....
+inside the do ubuntu :
+docker-compose -f docker-compose.prod.yml up --build 
+
+* in .env django we have a django laoowd hosts  we must change it and put the ip of the do      
+vi .env (open it and correct it )
+:wq (exit it )
+
+when all is ok we can see instead of  localhost:8000 we got our front we get 64.226.81.23:1337 our first page 
+run front: npm run dev
+inside backedn folder we .env.local we replace localhost :8000 with our ip do :1337 ==.  http:/ip:1337
+ we can ssh into inside our ubuntu  by  : ssh root@ip add
+
+-get code from git
+-Rest of server stuff
+
+we also can rename instead of  ip of  do with a name we choose as domain : server_name:jhkjhkjhk
+------------------------------------------------
+
+
+4.Frontend
+-Node, nginx
+-get code from git 
+create a seaparat file for .envlocal named  .env.prod 
+next public api host = http://64.23.56.:1337  ==>  we use it in apiservice.ts fetch...
+
+in next.conf main we add for  server do too 
+and also for websocke we add one more http 
+
+install nginx : pbb his docker could not install install it , he does it manuelly\
+inside his do: apt install nginx      
+to test : $ service nginx start
+in browser with the do ip , refresh we see nginx
+
+create a new config for nginx :
+cd /etc/nginx/sites-enabled/
+defualt
+rm default 
+
+we create a new configuratio for frontedn 
+touch frontend.conf 
+vi fron.conf 
+
+we usually in front  run :  npm run dev  but now we want to change it into :npm start in our do ubuntu  
+in our do ubuntu install note 
+apt install node.js
+to check 
+node -v
+
+we need to install node 
+npm run uild 
+
+to start local server
+npm  start
+now we refresh in front  not localhost:3000 but this time   64.228.24.12
+-------------------------------------------------
+
+
+
+
+

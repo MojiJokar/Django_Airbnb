@@ -51,6 +51,96 @@ Restarting the server to apply the changes...
 
 
 
+how to do :
+we have  fornt folder called  moji-django-bnb
+
+How to fun before:
+\PROJECTS> cd moji-django-bnb
+PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\moji-django-bnb> npm run dev
+
+
+create a  folder for the backend call it backend
+backend
+moji-django-bnb-backend
+cd in it 
+start to develop the backend here:
+===================================================================
+DONT mix up 
+folder called: django-bnb-backend
+project called: django_bnb_backend
+
+
+
+1.create virtual env
+d\moji-django-bnb-back> python -m venv env
+.\env\Scripts\Activate.ps1
+pip install django
+
+
+
+python.exe -m pip install --upgrade pip
+
+django-admin startproject django_bnb_backend .  
+
+
+
+if we check in our inside the backend we see our project and  env
+
+moji-django-bnb-back> ls
+
+
+    Directory: C:\Users\mmb20\OneDrive\Desktop\PROJECTS\backend\moji-django-bnb-back
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         9/18/2026   8:49 AM                django_bnb_backend
+d-----         9/18/2026   8:43 AM                env
+-a----         9/18/2026   8:49 AM            696 manage.py
+
+create requirements .txt
+
+pip freeze
+asgiref==3.12.1
+Django==6.1.1
+sqlparse==0.6.0
+tzdata==2026.4
+copy django in it 
+
+in the root directory , where there is  your  manage.py create:
+dockerfile create 
+create dockercompose 
+
+Volumes : says that first addresss should persisit in the second address
+
+
+settings.py
+import os 
+SECRET_KEY = OS.environ.get("SECRET_KEY")
+
+change settings for example in debug , bsecause we are 
+in dev  we dont see error message in brower , but we 
+want to see errors  we change debug and secret key in settings
+
+SECRET_KEY = os.environ.get("SECRET_KEY")
+DEBUG = bool(os.environ.get("DEBUG" , default=0))
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALOWED_HOSTS").split("")
+
+create a dockercompose and put all for django then for postgress:
+
+turn on your dockerDesktop:
+deactivvate and :
+docker-compose build .
+
+
+
+Get properties in the forntend and list them  this part is after serializers and api 
+
+
+
+find app, componentes, properties , propertylist
+
+
 
 
 
