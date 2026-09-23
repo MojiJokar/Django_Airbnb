@@ -48,7 +48,7 @@ Restarting the server to apply the changes...
 ✓ Running next.config.ts took 181ms
 
 
-
+-------------------------------------------------------------------------------------
 
 
 how to do :
@@ -143,5 +143,54 @@ find app, componentes, properties , propertylist
 
 
 
+more detail:
+BackEnd:
+docker use for admin , Postgresql and web
+in back:
+we made admin for front and used postgress and web using the docker , now docker is running and app is on in browser 
+==============================if you want to start your app next day :
+Turn on your dockerdesktop
+got to ==> moji-django-bnb-back and Activate your env : .\env\Scripts\Activate.ps1
+back to yoiur dockercompose file and run :  docker-compose up -d
+http://localhost:8000/
+-----------------------------------------------Get the peroperty in fortend and list  return them 
+in PropertyList we do some changes 
+here we have contact with REST 
+
+
+PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\moji-django-bnb> npm run dev                       
+http://localhost:3000/
+
+$ if any issues regarding setting we must refer to back 
+
+in admin we save some fotoes with some information :
+
+back is on , while dockerdesktop is running or by 
+docker-compose up -d
+when we get json in brower we can see it in our inspect as well
+in back :http://localhost:8000/api/properties/
+{"data": [{"id": "dbc58079-2944-4891-b1ce-f5ffe006f60d", "title": "beach", "price_per_night": 1, "image_url": "http://localhost:8000/media/uploads/properties/beach_1_ovUXD46.jpg"}]}
+
+right click , find  inspect we can get all json we have on front too .
+
+
+PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\moji-django-bnb> npm run dev  
+
+we had some typo issues :propertiylist !!!! instead  propertylist 
+we fix properylistitem and propertylist , also for foto must open next.config.ts and change it 
+
+===================================OPEN TWO TERMINAL TO RUN SERVER AND CODE ON THE OTHER TERMINAL================
+Frontend server is on :YOU CAN SEARCH 
+http://localhost:3000/properties/dfsdffs
+http://localhost:3000/properties/dfsdffs
+
+
+
+Restarting the server to apply the changes...
+▲ Next.js 16.3.5 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://169.254.228.97:3000
+✓ Ready in 2.7s
+✓ Running next.config.ts took 181ms
 
 

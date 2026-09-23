@@ -95,7 +95,8 @@
 
 // with reversesidebar
 import Image from "next/image";
-import ReservationSidebar from "../ReservationSideBar";
+// import ReservationSidebar from "../../components/properties.tsx/ReservationSideBar";
+import ReservationSidebar from "@/app/components/properties.tsx/ReservationSideBar";
 const PropertyDetailPage = () => {
     return (
         <main className="max-w-[1500px] mx-auto px-6 pb-6">
