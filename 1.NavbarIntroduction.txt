@@ -41,6 +41,10 @@ RUN SERVER|:
 PROJECTS\Django_bnb\frontEnd\air_bnb> npm run dev
 http://localhost:3000
 
+
+*** you must be in the root where you can run the server
+PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\Django_bnb\frontend\air_bnb> 
+PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\Django_bnb\frontend\air_bnb> npm run dev
 Navbar:------------------------------------------------------------------------------------
 app >> components/Navbar/Navbar.tsx, searchFilter.tsx
 
@@ -70,4 +74,14 @@ Make searchFilter.tsx
 heroicon.com for menu search:
 https://heroicons.com/
 
-to complete Navbar we add usernav.tsxadd|Propertybutton.tsx inside Navbar
+to complete Navbar we add usernav.tsxadd, Propertybutton.tsx add them all in inside app>component>Navbar.tsx and not main Navbar.tsx 
+
+Category:
+add categories.tsx and add it in main page.tsx 
+
+
+
+
+-------------Summary---------------
+we have a folder components and folder navbar , we make for each item we need then add that file into navbar.tsx
+navbar.tsx(searchFilter,addpropertyButton,searchFilter)

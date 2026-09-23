@@ -78,7 +78,7 @@ const Navbar =  () => {
                         </div>
                         <div className="flex items-center space-x-6">
                             {/* add text for test   add property*/}
-                            add property from Navbar
+                            component/navbar/navbar.tsx
                             <UserNav/>
                             
                         </div>

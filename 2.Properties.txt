@@ -1,0 +1,19 @@
+Propertiy List
+example to show and test a items 3 times :To show 3 PropertyListItem components on a page, create a parent page and use a grid with 3 columns.
+in component Folder  in make folder  properties [id] folder , two independant files called properlist, propertylistItem
+first , 
+create propertylistItem copy from property List just to test, just add name of properlist into propertylistItem </properlist>
+in propertylist we wanna show item,its title, description  and etc 
+add properlist to the main page.tsx
+it is a part of or main page ! Navbar is separate:
+
+http://localhost:3000/
+this is propertlisItem  comes on the page 
+we can see pagelist:
+http://localhost:3000/properties/dfsdffs
+we can see our page 
+
+
+we have done all properties id, its pages properlist and item and git push
+
+END OF PART 1========================

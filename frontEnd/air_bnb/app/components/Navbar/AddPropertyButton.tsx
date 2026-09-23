@@ -1,10 +1,25 @@
 
+// const AddPropertyButton = () => {
+
+//     return (
+//         <p>addButtonsss</p>
+
+//     )
+// }
+
+// export default AddPropertyButton;
+//===================================================
 const AddPropertyButton = () => {
 
     return (
-        <p>addButtonsss</p>
+            <div className="p-2 cursor-pointer text-sm font-semibold rounded-full hover:bg-gray-200">
+                    NavbarAddPropertyButton.tsx
+            </div>
 
     )
 }
 
 export default AddPropertyButton;
+
+
+
