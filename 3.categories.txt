@@ -1,8 +1,7 @@
 for categories there is  icon 
 do not mix it as image with the image of  item !
  src="/icn_category_beach.webp"
-
-
+we make 4  the same categories
 
 
 

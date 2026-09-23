@@ -70,14 +70,19 @@
 //-------------------------------------------------------
 import Image from "next/image";
 import PropertyList from "./components/properties/PropertyList";
-import Categories from "./components/navbar/categories";
+import Categories from "./components/Categories";
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <Categories/>
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-          <PropertyList/>
-      </main>
-    </div>
+    <main className="max-w-[1500px] mx-auto px-6">
+        
+        <Categories/>
+        <div className="mt-4 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            <PropertyList/>
+
+        </div>
+
+
+</main>
+
   );
 }
