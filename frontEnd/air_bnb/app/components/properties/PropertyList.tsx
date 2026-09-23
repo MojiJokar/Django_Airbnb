@@ -1,30 +1,30 @@
 
 
-const PropertyList  = () => {
-    return (
-        <p>propertyList :</p>
+// const PropertyList  = () => {
+//     return (
+//         <p>propertyList :</p>
          
 
        
     
-    )
-}
+//     )
+// }
 
-export default PropertyList;
+// export default PropertyList;
 
 
 //--------------------------------------------------
-// import PropertyListItem from "./PropertyListItem";
+import PropertyListItem from "./PropertyListItem";
 
-// export default function PropertiesPage() {
-//   return (
-//     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
-//       <PropertyListItem />
-//       <PropertyListItem />
-//       <PropertyListItem />
-//     </div>
-//   );
-// }
+export default function PropertiesPage() {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+      <PropertyListItem />
+      <PropertyListItem />
+      <PropertyListItem />
+    </div>
+  );
+}
 
 //3-match it with propertylistItem----------------------------------------
 // 'use client';

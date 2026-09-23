@@ -10,7 +10,7 @@ Docker, Postgresql
 
 
 Deployment:
-Channel for live caht
+Channel for live chat
 Deploy on Degital Ocean/AWS
 ---------------------------------------------
 create a  git repo and  add these:
@@ -23,7 +23,35 @@ git push -u origin main
 
 cd frontEnd
 
+============================================================================
+install Node.js
+To install Node.js on Windows:
 
+Go to the official Node.js website:
+Node.js Downloads
+Download the LTS (Long Term Support) version for Windows.
+Run the downloaded .msi installer.
+In the setup wizard:
+Click Next through the prompts.
+Accept the license agreement.
+Keep the default installation options.
+Make sure Add to PATH remains enabled.
+Click Install and complete the setup.
+Close and reopen PowerShell, then verify the installation:
+
+if you dont have Node.js  you must install , add PATH then test 
+
+
+C:\Users\mmb20\OneDrive\Desktop\PROJECTS> npx create-next-app@latest
+=========
+push to github
+git init
+git commit -m "first commit"
+git remote add origin https://github.com/Mjhfsaljfhsdjfhsfsjhfsdjfhsdlfjsdhj
+git push -u origin master
+======================
+npm  run dev
+http://localhost:3000
 
 
 

@@ -1,0 +1,11 @@
+we create a file for landlord
+this is just a  very primitive website we will develop its front later, 
+now were going to focus on back mainly
+
+
+
+
+
+
+
+

@@ -1,0 +1,1 @@
+we make propertlisItem price and then bring in PropertyList
