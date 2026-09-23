@@ -88,7 +88,7 @@
 // }
 //-------------------small icon for  items was above-----------------------------
 import Image from "next/image";
-import PropertyList from "./components/properties/PropertyList";
+import PropertyList from "./properties/PropertyList";
 import Categories from "./components/Categories";
 export default function Home() {
   return (

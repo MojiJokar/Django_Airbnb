@@ -1,1 +1,4 @@
 we make propertlisItem price and then bring in PropertyList
+http://localhost:3000/properties/sdfads
+
+we have sevral tsx files include in each other  for ex in properties, page.tsx we  import reversetionsidebar
