@@ -1,7 +1,3 @@
-// http://localhost:3001/properties/sdfads
-
-
-
 // const ReservationSidebar =  () => {
 //         return (
 //             <p>Reservation side bar hello</p>

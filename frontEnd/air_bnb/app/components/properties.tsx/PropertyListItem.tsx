@@ -3,42 +3,42 @@
 
 
 
-import Image from 'next/image';
-import { PropertyType } from './types';
+// import Image from 'next/image';
+// import { PropertyType } from '../../properties/types';
 
-type PropertyListItemProps = {
-    property: PropertyType;
-};
+// type PropertyListItemProps = {
+//     property: PropertyType;
+// };
 
-const PropertyListItem = ({ property }: PropertyListItemProps) => {
-    return (
-        <div className="cursor-pointer">
-            <div className="relative overflow-hidden aspect-square rounded-xl">
-                <Image
-                    fill
-                    src="/Beach_1.jpg"
-                    sizes="(max-width: 768px) 100vw, 768px"
-                    className="object-cover transition hover:scale-110"
-                    alt="Beach house"
-                />
-            </div>
+// const PropertyListItem = ({ property }: PropertyListItemProps) => {
+//     return (
+//         <div className="cursor-pointer">
+//             <div className="relative overflow-hidden aspect-square rounded-xl">
+//                 <Image
+//                     fill
+//                     src="/Beach_1.jpg"
+//                     sizes="(max-width: 768px) 100vw, 768px"
+//                     className="object-cover transition hover:scale-110"
+//                     alt="Beach house"
+//                 />
+//             </div>
 
-            <div className="mt-2">
-                <p className="text-lg font-bold">
-                    Property {property.id}
-                </p>
-            </div>
+//             <div className="mt-2">
+//                 <p className="text-lg font-bold">
+//                     Property {property.id}
+//                 </p>
+//             </div>
 
-            <div className="mt-2">
-                <p className="text-sm text-gray-700">
-                    Price: $110
-                </p>
-            </div>
-        </div>
-    );
-};
+//             <div className="mt-2">
+//                 <p className="text-sm text-gray-700">
+//                     Price: $110
+//                 </p>
+//             </div>
+//         </div>
+//     );
+// };
 
-export default PropertyListItem;
+// export default PropertyListItem;
 
 
 
@@ -79,55 +79,55 @@ export default PropertyListItem;
 
 // export default PropertyListItem;
 //=A============================
-// import Image from "next/image";
+import Image from "next/image";
 
 
-// const PropertyListItem  = () => {
-//     return (
-//                 < div  className="cursor-pointer">
-//                     <div className="  relative overflow-hidden aspect-square rounded-xl">
-//                         <Image
-//                                 fill
-//                                 src='/icn_category_beach.jpeg'
-//                                 sizes="(max-width: 768px) 768px, (max-width: 1200px): 768px, 768px"
-//                                 className="hover:scale-110 object-cover transition h-full w-full"
-//                                 alt="Beach house"
-//                         />
-//                         <Image
-//                                 fill
-//                                 src='/Beach_1.jpg'
-//                                 sizes="(max-width: 768px) 768px, (max-width: 1200px): 768px, 768px"
-//                                 className="hover:scale-110 object-cover transition h-full w-full"
-//                                 alt="Beach house"
-//                         />
-//                         <Image
-//                                 fill
-//                                 src='/icn_category_beach.jpeg'
-//                                 sizes="(max-width: 768px) 768px, (max-width: 1200px): 768px, 768px"
-//                                 className="hover:scale-110 object-cover transition h-full w-full"
-//                                 alt="Beach house"
-//                         />
-//                         <Image
-//                                 fill
-//                                 src='/icn_category_beach.jpeg'
-//                                 sizes="(max-width: 768px) 768px, (max-width: 1200px): 768px, 768px"
-//                                 className="hover:scale-110 object-cover transition h-full w-full"
-//                                 alt="Beach house"
-//                         />
+const PropertyListItem  = () => {
+    return (
+                < div  className="cursor-pointer">
+                    <div className="  relative overflow-hidden aspect-square rounded-xl">
+                        <Image
+                                fill
+                                src='/icn_category_beach.jpeg'
+                                sizes="(max-width: 768px) 768px, (max-width: 1200px): 768px, 768px"
+                                className="hover:scale-110 object-cover transition h-full w-full"
+                                alt="Beach house"
+                        />
+                        <Image
+                                fill
+                                src='/Beach_1.jpg'
+                                sizes="(max-width: 768px) 768px, (max-width: 1200px): 768px, 768px"
+                                className="hover:scale-110 object-cover transition h-full w-full"
+                                alt="Beach house"
+                        />
+                        <Image
+                                fill
+                                src='/icn_category_beach.jpeg'
+                                sizes="(max-width: 768px) 768px, (max-width: 1200px): 768px, 768px"
+                                className="hover:scale-110 object-cover transition h-full w-full"
+                                alt="Beach house"
+                        />
+                        <Image
+                                fill
+                                src='/icn_category_beach.jpeg'
+                                sizes="(max-width: 768px) 768px, (max-width: 1200px): 768px, 768px"
+                                className="hover:scale-110 object-cover transition h-full w-full"
+                                alt="Beach house"
+                        />
 
-//                     </div>
-//                     <div className="mt-2">
-//                         <p className="text-lg font-bold">property name</p>
-//                     </div>
-//                     <div className="mt-2">
-//                         <p className="text-sm text-gray-7500">price : 2000 $</p>
-//                     </div>
-//                  </div>
+                    </div>
+                    <div className="mt-2">
+                        <p className="text-lg font-bold">property name</p>
+                    </div>
+                    <div className="mt-2">
+                        <p className="text-sm text-gray-7500">price : 2000 $</p>
+                    </div>
+                 </div>
     
-//     )
-// }
+    )
+}
 
-// export default PropertyListItem;
+export default PropertyListItem;
 
 
 

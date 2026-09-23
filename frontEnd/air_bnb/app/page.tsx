@@ -88,15 +88,15 @@
 // }
 //-------------------small icon for  items was above-----------------------------
 import Image from "next/image";
-import PropertyList from "./properties/PropertyList";
-import Categories from "./components/Categories";
+import PropertyList from "./components/properties.tsx/PropertyList";
+
 export default function Home() {
   return (
     <main className="max-w-[1500px] mx-auto px-6">
         
        
        
-            <Categories/>
+            
             <PropertyList/>
       
 
