@@ -1,0 +1,27 @@
+direction of giving url is this way :
+for ex : we make landlors,[id], in url we type http://localhost:3000/landlords/dfd we get the content of page.tsx
+1.
+
+Installation and setup
+Navigation
+Categories
+Property list
+Property detail
+
+2.
+Landlord detail page
+My reservations
+My propertes
+Inbox
+Conversation
+User menu
+Reusable modal
+Login modal
+Sign up modal
+
+3.
+4.
+5.
+6.
+7.
+8.
