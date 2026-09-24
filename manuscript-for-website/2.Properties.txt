@@ -1,3 +1,6 @@
+categories.tsx  make the icons for our categories add in main page.rsx and code inside  categories.tsx
+add properlist in main page.tsx and then code inside properlist and import propertlisItem in it 
+
 Propertiy List
 example to show and test a items 3 times :To show 3 PropertyListItem components on a page, create a parent page and use a grid with 3 columns.
 in component Folder  in make folder  properties [id] folder , two independant files called properlist, propertylistItem

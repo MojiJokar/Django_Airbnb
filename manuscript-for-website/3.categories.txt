@@ -4,7 +4,8 @@ do not mix it as image with the image of  item !
 we make 4  the same categories
 
 
-
+after we added categories and it wors the modern code snippet requires  zustand:
+npm install zustand
 
 
 
