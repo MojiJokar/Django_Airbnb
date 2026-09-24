@@ -20,3 +20,7 @@ we can see our page
 we have done all properties id, its pages properlist and item and git push
 
 END OF PART 1========================
+Advanced properties and propertlisItem
+we checked and got 3 fotos or propties on the front static and used the advanced code:
+here we have to import and correct some files but one importatnt is action.ts 
+here connected to back so we will go to back then come back here:

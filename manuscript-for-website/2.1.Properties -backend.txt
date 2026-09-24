@@ -1,0 +1,320 @@
+develop django , web, Postgres, Docker, dockerCompose
+---------------------------------------------------------------
+
+
+Advanced properties and propertlisItem
+we checked and got 3 fotos or propties on the front static and used the advanced code:
+here we have to import and correct some files but one importatnt is action.ts 
+here connected to back so we will go to back then come back here:
+START BACKEND developMENT---------------------------------------------------------------------
+DONT mix up  frontend forlder for front , backend folder for back , go to backend by cd .. or any comand !
+folder called: django-bnb-backend
+project called: django_bnb_backend
+
+1.create virtual env
+d\moji-django-bnb-back> python -m venv env
+.\env\Scripts\Activate.ps1
+pip install django
+
+
+2.
+python.exe -m pip install --upgrade pip
+
+django-admin startproject django_bnb_backend .  
+
+
+
+if we check in our inside the backend we see our project and  env
+moji-django-bnb-back> ls
+
+
+    Directory: C:\Users\mmb20\OneDrive\Desktop\PROJECTS\backend\moji-django-bnb-back
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         9/18/2026   8:49 AM                django_bnb_backend
+d-----         9/18/2026   8:43 AM                env
+-a----         9/18/2026   8:49 AM            696 manage.py
+
+you can get your django server , run  where there is  manage.py 
+python manage.py runserver
+open in brower:
+http://localhost:8000/
+
+
+create requirements .txt
+
+pip freeze
+asgiref==3.12.1
+Django==6.1.1
+sqlparse==0.6.0
+tzdata==2026.4
+copy django in it 
+list of all  for this project:
+Django==5.0.2
+psycopg2-binary==2.9.9
+dj-rest-auth==4.0.0
+django-allauth==0.52.0
+django-cors-headers==4.3.1
+djangorestframework==3.14.0
+djangorestframework-simplejwt==5.3.1
+pillow==10.2.0
+channels==4.0.0
+daphne==4.0.0
+gunicorn==21.2.0
+python-dotenv==1.0.1
+--------------------------
+Docker only as example:
+--- we must use both dockerfile with dockercompose in our case . however we can 
+only have one dockerfile for one container 
+this is example:
+docker build -t django-bnb . ==> creates image
+in dockercompose it builds from dockerfile where dockerfile is located
+build: .
+docker run -p 8000:8000 django-bnb  ==> run container
+
+
+
+very important :
+moji-django-bnb-back/
+│
+├── django_bnb_backend/
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── ...
+│
+├── env/
+│
+├── .env.dev
+├── docker-compose.yml
+├── Dockerfile
+├── manage.py
+└── requirements.txt
+---------------------
+make a dockerfile with docker compose.ymlL
+Before Dockerfile and dockerCompose:
+in requirements.txt that you made put :
+
+
+so in dockerfle can install it as its command
+
+---Docker with dockercompose
+Docker:
+in the root directory , where there is  your  manage.py create:
+dockerfile create 
+
+
+---
+dockercompose :
+Volumes : says that first addresss should persisit in the second address
+looks for your manage.py in your dockerCompose
+.:/usr/src/django_bnb_backend/ means your current manage.py copy into the
+directory of the docker which is :/usr/src/django_bnb_backend/
+
+------------------------------------------------------------
+when you  coded both dockerfile and dockercompose run following :
+(env) PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\Django_bnb\backend> docker-compose up --build
+
+==============================if you want to start your app next day :
+Turn on your dockerdesktop
+got to ==> moji-django-bnb-back(backend wehere thre is dockercompose file) and Activate your env : .\env\Scripts\Activate.ps1
+back to yoiur dockercompose file and run :  docker-compose up -d
+VIP:
+http://localhost:8000/
+NOt:
+0.0.0.0//fsdfsdfsdfsf
+
+Add Postgress to project and docker=========================================
+in project settings.py  many things such as :
+
+import os 
+SECRET_KEY = OS.environ.get("SECRET_KEY")
+....
+
+change settings for example in debug , bsecause we are 
+in dev  we dont see error message in brower , but we 
+want to see errors  we change debug and secret key in settings
+
+SECRET_KEY = os.environ.get("SECRET_KEY")
+DEBUG = bool(os.environ.get("DEBUG" , default=0))
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALOWED_HOSTS").split("")
+......
+
+create  .env.dev: put all secret keys in there 
+
+
+create a  new dockercompose with new or add new line for  postgress  and put all for django then for postgress:
+
+deactivvate and :
+docker-compose down --remove-orphans
+
+turn on your dockerDesktop:
+
+
+
+if we have  unapplied migration :
+docker-compose exec web python manage.py migrate
+*** turn off in settings your app  installed , because you get error!
+in our dockerdesktop we will see two backedn-db-1 and backend-web-1 dotenv
+http://localhost:8000/
+-------------------------------------------------END OF DOCKER & DOKCERcompose--------------
+
+Get properties in the forntend and list them  this part is after serializers and api 
+
+
+
+find app, componentes, properties , propertylist
+
+
+
+------------------------------------------------------------
+more detail:
+BackEnd:
+docker use for admin , Postgresql and web
+in back:
+we made admin for front and used postgress and web using the docker , now docker is running and app is on in browser 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BackEnd:
+docker use for admin , Postgresql and web
+in back:
+we made admin for front and used postgress and web using the docker , now docker is running and app is on in browser 
+==============================if you want to start your app next day :
+Turn on your dockerdesktop
+got to ==> moji-django-bnb-back and Activate your env : .\env\Scripts\Activate.ps1
+back to yoiur dockercompose file and run :  docker-compose up -d
+http://localhost:8000/
+-----------------------------------------------Get the peroperty in fortend and list  return them 
+in PropertyList we do some changes 
+here we have contact with REST 
+
+
+PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\moji-django-bnb> npm run dev                       
+http://localhost:3000/
+
+$ if any issues regarding setting we must refer to back 
+
+in admin we save some fotoes with some information :
+
+back is on , while dockerdesktop is running or by 
+docker-compose up -d
+when we get json in brower we can see it in our inspect as well
+in back :http://localhost:8000/api/properties/
+{"data": [{"id": "dbc58079-2944-4891-b1ce-f5ffe006f60d", "title": "beach", "price_per_night": 1, "image_url": "http://localhost:8000/media/uploads/properties/beach_1_ovUXD46.jpg"}]}
+
+right click , find  inspect we can get all json we have on front too .
+
+
+PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\moji-django-bnb> npm run dev  
+
+we had some typo issues :propertiylist !!!! instead  propertylist 
+we fix properylistitem and propertylist , also for foto must open next.config.ts and change it 
+
+===propetylist, propertyitelList  =====OPEN TWO TERMINAL TO RUN SERVER AND CODE ON THE OTHER TERMINAL================
+Frontend server is on :YOU CAN SEARCH 
+http://localhost:3000/properties/dfsdffs
+http://localhost:3000/properties/dfsdffs
+
+
+
+Restarting the server to apply the changes...
+▲ Next.js 16.3.5 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://169.254.228.97:3000
+✓ Ready in 2.7s
+✓ Running next.config.ts took 181ms
+
+
+-------------------------------------------------------------------------------------
+
+
+how to do :
+we have  fornt folder called  moji-django-bnb
+
+How to fun before:
+\PROJECTS> cd moji-django-bnb
+PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\moji-django-bnb> npm run dev
+
+
+create a  folder for the backend call it backend
+backend
+moji-django-bnb-backend
+cd in it 
+start to develop the backend here:
+
+
+-----------------------------------------------Get the peroperty in fortend and list  return them 
+in PropertyList we do some changes 
+here we have contact with REST 
+
+
+PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\moji-django-bnb> npm run dev                       
+http://localhost:3000/
+
+$ if any issues regarding setting we must refer to back 
+
+in admin we save some fotoes with some information :
+
+back is on , while dockerdesktop is running or by 
+docker-compose up -d
+when we get json in brower we can see it in our inspect as well
+in back :http://localhost:8000/api/properties/
+{"data": [{"id": "dbc58079-2944-4891-b1ce-f5ffe006f60d", "title": "beach", "price_per_night": 1, "image_url": "http://localhost:8000/media/uploads/properties/beach_1_ovUXD46.jpg"}]}
+
+right click , find  inspect we can get all json we have on front too .
+
+
+PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\moji-django-bnb> npm run dev  
+
+we had some typo issues :propertiylist !!!! instead  propertylist 
+we fix properylistitem and propertylist , also for foto must open next.config.ts and change it 
+
+===================================OPEN TWO TERMINAL TO RUN SERVER AND CODE ON THE OTHER TERMINAL================
+Frontend server is on :YOU CAN SEARCH 
+http://localhost:3000/properties/dfsdffs
+http://localhost:3000/properties/dfsdffs
+
+
+
+Restarting the server to apply the changes...
+▲ Next.js 16.3.5 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://169.254.228.97:3000
+✓ Ready in 2.7s
+✓ Running next.config.ts took 181ms
