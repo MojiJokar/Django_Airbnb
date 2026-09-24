@@ -1,3 +1,187 @@
+for REST do following L 
+==================================
+in requirements add res 
+dj-rest-auth==4.0.0
+django-allauth==0.52.0
+django-cors-headers==4.3.1
+djangorestframework==3.14.0
+djangorestframework-simplejwt==5.3.1
+pillow==10.2.0
+channels==4.0.0
+daphne==4.0.0
+
+
+ADMIN django:
+----------------------------------------------------------------------------
+(env)docker-compose exec web python manage.py startapp useraccount
+
+when virtual enirorment is active  run the command 
+we create a user app :
+(env) PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\Django_bnb\backend> docker-compose exec web python manage.py startapp useraccount
+
+then create a model for it 
+model:
+we create a model called:useraccount
+
+
+in main settings add it .
+
+
+inside its model , create a model called  customusermanager
+
+(env) PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\Django_bnb\backend> docker-compose up -d    
+(env) PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\backend\moji-django-bnb-back> docker-compose exec web python manage.py makemigrations
+(env) PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\backend\moji-django-bnb-back> docker-compose exec web python manage.py flush
+
+DONE
+----------------------------------------------------------
+### every time when you wanna have a new model just do this:
+
+docker-compose up -d
+        ↓
+  docker-compose exet web python manage.py startapp ******
+  create model
+edit settings.py
+        ↓
+docker-compose exec web python manage.py makemigrations
+        ↓
+docker-compose exec web python manage.py migrate
+000000000000000000000000000000000000000000000000000000000000000
+
+
+
+
+
+
+new model for auth, jwt:
+---------------------------------------------------------------------------------
+* we can delete all from docker desktop and run over again :dockercompose build 
+
+configuration, in settings for  auth, jwt and etc 
+
+add more line in settings above installed,app 
+migrate again the postgress
+you should down , then up again 
+
+
+Model : Property
+------------------------------------------------------------------------------------
+(env) PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\backend\moji-django-bnb-back> docker-compose exec web python manage.py startapp property 
+
+add it in :
+ettings, intsll apps  add it 
+
+confgure drf, cores, etc
+
+doceker-compose up 
+
+ create app  for peropeties:
+ ==========================================================
+after creating  a new property, inside its model we fill in all
+down
+makemigrations
+migrate
+
+
+
+serializer:
+-------------serializer.py-----api.py-------------------------------------------------------
+serializer take data from model input into jason format
+
+serializer:
+insidee mode we created called property create a file  called, serializer.py
+make a file called :
+api.py also to  make url available from frontend 
+
+property> url.py,  main url.py too : 
+make url for prperty 
+
+
+* if you create something in serializer and see it can be dockercompose up then localhost doesnt show after changes ,do folloing:
+docker-compose down
+docker-compose build --no-cache web
+docker-compose up -d
+
+docker-compose logs web
+http://localhost:8000
+docker-compose exec web python manage.py makemigrations
+docker-compose exec web python manage.py migrate
+
+docker-compose logs web
+
+http://localhost:8000/api/properties/
+
+{"data": []}
+
+
+Model superUser--------------------------------------------------
+we need to create a superUser for testing
+
+
+\moji-django-bnb-back> .\env\Scripts\Activate.ps1
+(env) PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\backend\moji-django-bnb-back> 
+
+
+docker exec -it backend-web-1 python manage.py createsuperuser
+
+12345678Bb$ i password , rememmber
+http://localhost:8000/admin/ , insert data and tahts it 
+
+to add property goes to admin.py of the property  andd a line to see it in localhost admin the peroperty
+
+from .models import Property
+
+admin.site.register(Property)
+
+refresh admin , its there
+
+fill admin prop , foto , test , save it 
+
+http://localhost:8000/api/properties/
+you get this :
+{"data": [{"id": "69f71127-550f-405b-8ea0-3ec93015c9fe", "title": "beach", "price_per_night": 10, "image_url": "http://localhost:8000/media/uploads/properties/my_photo_white_background.png"}]}
+
+Get Properties in frontend----------------------------
+
+---------DONE-------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
