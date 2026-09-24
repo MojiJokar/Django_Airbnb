@@ -135,15 +135,16 @@ admin.site.register(Property)
 
 refresh admin , its there
 
-fill admin prop , foto , test , save it 
+Log in Admin fill admin prop , foto , test , save it 
 
+we will see:
 http://localhost:8000/api/properties/
 you get this :
 {"data": [{"id": "69f71127-550f-405b-8ea0-3ec93015c9fe", "title": "beach", "price_per_night": 10, "image_url": "http://localhost:8000/media/uploads/properties/my_photo_white_background.png"}]}
 
 Get Properties in frontend----------------------------
 
----------DONE-------------------------------------------------------------------------------------
+DONE-------------------------------------------------------------------------------------
 
 
 
@@ -156,36 +157,7 @@ Get Properties in frontend----------------------------
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-BackEnd:
+Summary:
 docker use for admin , Postgresql and web
 in back:
 we made admin for front and used postgress and web using the docker , now docker is running and app is on in browser 
@@ -194,7 +166,15 @@ Turn on your dockerdesktop
 got to ==> moji-django-bnb-back and Activate your env : .\env\Scripts\Activate.ps1
 back to yoiur dockercompose file and run :  docker-compose up -d
 http://localhost:8000/
------------------------------------------------Get the peroperty in fortend and list  return them 
+
+you wil see in brower:
+admin/
+api/properties/
+^media/(?P<path>.*)$
+The empty path didn’t match any of these.
+
+----get the foto from Admin to front page------------------------
+Get the peroperty in fortend and list  return them :
 in PropertyList we do some changes 
 here we have contact with REST 
 
@@ -204,9 +184,7 @@ http://localhost:3000/
 
 $ if any issues regarding setting we must refer to back 
 
-in admin we save some fotoes with some information :
-
-back is on , while dockerdesktop is running or by 
+in admin we save some fotoes with some information :(back is on , while dockerdesktop is running or by )
 docker-compose up -d
 when we get json in brower we can see it in our inspect as well
 in back :http://localhost:8000/api/properties/
@@ -214,18 +192,21 @@ in back :http://localhost:8000/api/properties/
 
 right click , find  inspect we can get all json we have on front too .
 
+Front:
+PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\front>air_bnb> npm run dev  
 
-PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\moji-django-bnb> npm run dev  
-
+next.config.ts:
 we had some typo issues :propertiylist !!!! instead  propertylist 
 we fix properylistitem and propertylist , also for foto must open next.config.ts and change it 
+
 
 ===propetylist, propertyitelList  =====OPEN TWO TERMINAL TO RUN SERVER AND CODE ON THE OTHER TERMINAL================
 Frontend server is on :YOU CAN SEARCH 
 http://localhost:3000/properties/dfsdffs
 http://localhost:3000/properties/dfsdffs
 
-
+to run front:
+(env) PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\Django_bnb\frontend\air_bnb> npm run dev
 
 Restarting the server to apply the changes...
 ▲ Next.js 16.3.5 (Turbopack)
@@ -235,60 +216,9 @@ Restarting the server to apply the changes...
 ✓ Running next.config.ts took 181ms
 
 
+Done:
+summary:
 -------------------------------------------------------------------------------------
+we add foto in admin and we get fotos in front 
 
 
-how to do :
-we have  fornt folder called  moji-django-bnb
-
-How to fun before:
-\PROJECTS> cd moji-django-bnb
-PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\moji-django-bnb> npm run dev
-
-
-create a  folder for the backend call it backend
-backend
-moji-django-bnb-backend
-cd in it 
-start to develop the backend here:
-
-
------------------------------------------------Get the peroperty in fortend and list  return them 
-in PropertyList we do some changes 
-here we have contact with REST 
-
-
-PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\moji-django-bnb> npm run dev                       
-http://localhost:3000/
-
-$ if any issues regarding setting we must refer to back 
-
-in admin we save some fotoes with some information :
-
-back is on , while dockerdesktop is running or by 
-docker-compose up -d
-when we get json in brower we can see it in our inspect as well
-in back :http://localhost:8000/api/properties/
-{"data": [{"id": "dbc58079-2944-4891-b1ce-f5ffe006f60d", "title": "beach", "price_per_night": 1, "image_url": "http://localhost:8000/media/uploads/properties/beach_1_ovUXD46.jpg"}]}
-
-right click , find  inspect we can get all json we have on front too .
-
-
-PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\moji-django-bnb> npm run dev  
-
-we had some typo issues :propertiylist !!!! instead  propertylist 
-we fix properylistitem and propertylist , also for foto must open next.config.ts and change it 
-
-===================================OPEN TWO TERMINAL TO RUN SERVER AND CODE ON THE OTHER TERMINAL================
-Frontend server is on :YOU CAN SEARCH 
-http://localhost:3000/properties/dfsdffs
-http://localhost:3000/properties/dfsdffs
-
-
-
-Restarting the server to apply the changes...
-▲ Next.js 16.3.5 (Turbopack)
-- Local:         http://localhost:3000
-- Network:       http://169.254.228.97:3000
-✓ Ready in 2.7s
-✓ Running next.config.ts took 181ms

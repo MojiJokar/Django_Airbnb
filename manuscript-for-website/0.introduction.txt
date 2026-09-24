@@ -1,3 +1,5 @@
+run in (env)for back 
+front doesnt need env 
 introduction:
 ---------------------------------
 frontEnd
