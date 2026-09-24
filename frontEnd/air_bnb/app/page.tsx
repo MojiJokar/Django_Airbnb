@@ -93,7 +93,7 @@
 //---------------------------------------------
 import Image from "next/image";
 import Categories from "./components/Categories";
-import PropertyList from "./components/properties/[id]/PropertyList";
+import PropertyList from "./components/properties/PropertyList";
 
 export default function Home() {
   return (
