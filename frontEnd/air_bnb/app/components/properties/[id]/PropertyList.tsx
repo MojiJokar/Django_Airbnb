@@ -1,11 +1,30 @@
+// import PropertyListItem from "./PropertyListItem";
+
+
+// const PropertyList  = () => {
+//     return (
+        
+//          <PropertyListItem/>
+
+       
+    
+//     )
+// }
+
+// export default PropertyList;
+
+//----to have 3 big  fotos "propeties following"-----------------------
+
 import PropertyListItem from "./PropertyListItem";
 
 
 const PropertyList  = () => {
     return (
-        
-         <PropertyListItem/>
-
+        <>
+            <PropertyListItem/>
+            <PropertyListItem/>
+            <PropertyListItem/>
+        </>
        
     
     )
@@ -15,13 +34,31 @@ export default PropertyList;
 
 
 
+// 3 small fotos , 
+// import PropertyListItem from "./PropertyListItem";
+
+
+// const PropertyList  = () => {
+//     return (
+        
+//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+//                 <PropertyListItem />
+//                 <PropertyListItem />
+//                 <PropertyListItem />
+//         </div>
+
+       
+    
+//     )
+// }
+
+// export default PropertyList;
 
 
 
 
 
-
-
+//---------------------------------------------
 // 'use client';
 
 // import { format } from 'date-fns';
