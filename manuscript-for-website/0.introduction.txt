@@ -1,5 +1,18 @@
-run in (env)for back 
+VIP:
+you must do these things to get the front in browwer
+1.
+Docker command to run containers in PowerShell:
+run in (env)for back :
+PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\Django_Airbnb\backend> docker-compose up -d
+http://localhost:8000/
+
+2.
 front doesnt need env 
+PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\Django_Airbnb\frontend\air_bnb> npm run dev
+http://localhost:3000
+
+
+
 introduction:
 ---------------------------------
 frontEnd
