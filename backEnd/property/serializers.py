@@ -3,6 +3,7 @@ from rest_framework import serializers
 # from .models import Property
 from .models import Property, Reservation
 
+# we need it for landloard 
 # from useraccount.serializers import UserDetailSerializer
 
 
@@ -34,7 +35,7 @@ class ReservationsListSerializer(serializers.ModelSerializer):
             'property',
         )
 
-
+# we  will do it next for landloard 
 # class PropertiesDetailSerializer(serializers.ModelSerializer):
 #     landlord = UserDetailSerializer(read_only=True, many=False)
 

@@ -23,11 +23,13 @@ Reusable modal
 Login modal
 Sign up modal
 
-2.
-
 3.
-4.
-5.
+
+4.apiService.tsx
+
+5.Add properties, API endpoint send data addpropertymodal.tsx - component addproperty.tsx(add property )
+to create for country we make Forms->Addforms(selectCountry) add to addpropertymodal , property forms(security of data provided by User) ,
+add in api.py. 
 6.
 7.
 8.
