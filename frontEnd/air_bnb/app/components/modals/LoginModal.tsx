@@ -24,14 +24,25 @@ const LoginModal = () => {
 
         const response = await apiService.postWithoutToken('/api/auth/login/', JSON.stringify(formData))
 
+        // if (response.access) {
+        //     handleLogin(response.user.pk, response.access, response.refresh);
+
+        //     loginModal.close();
+
+        //     router.push('/')
+        // } else {
+        //     setErrors(response.non_field_errors);
+        // }
         if (response.access) {
-            handleLogin(response.user.pk, response.access, response.refresh);
-
+            await handleLogin(
+                response.user.pk,
+                response.access,
+                response.refresh
+            );
+        
             loginModal.close();
-
-            router.push('/')
-        } else {
-            setErrors(response.non_field_errors);
+        
+            router.push('/');
         }
     }
 
