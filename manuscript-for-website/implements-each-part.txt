@@ -1,7 +1,9 @@
 direction of giving url is this way :
 for ex : we make landlors,[id], in url we type http://localhost:3000/landlords/dfd we get the content of page.tsx
-1.
 
+
+Todo list
+1.
 Installation and setup
 Navigation
 Categories
@@ -18,6 +20,8 @@ User menu
 Reusable modal
 Login modal
 Sign up modal
+
+2.
 
 3.
 4.
