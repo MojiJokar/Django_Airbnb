@@ -61,11 +61,7 @@ const LandlordDetailPage = () => {
                         />
                         <h1 className="mt-6 text-2xl">John Doe</h1>
                         <ContactButton/>
-                        contactssss
-
-                           
-                                
-                                
+                        contactsTest     
                     </div>
                 </aside>
                 

@@ -1,0 +1,215 @@
+Structure:
+----------------------------------------------------
+Django_Airbnb/
+│
+├── backend/                  ← Django + PostgreSQL
+│   ├── django_bnb_backend/
+│   ├── property/
+│   ├── useraccount/
+│   └── manage.py
+│
+├── frontend/
+│   └── air_bnb/              ← Next.js
+│
+└── ...
+
+
+
+Browser
+   │
+   ▼
+┌─────────────────┐
+│ Next.js Frontend│
+│ localhost:3000  │
+└────────┬────────┘
+         │ HTTP Request
+         ▼
+┌─────────────────┐
+│ Django REST API │
+│ localhost:8000  │
+└────────┬────────┘
+         │ ORM
+         ▼
+┌─────────────────┐
+│ PostgreSQL      │
+│ Database        │
+└─────────────────┘
+
+those run inside docker:
+Docker
+│
+├── frontend container
+├── backend container
+└── postgres container
+--------------------------------
+
+http://localhost:3000
+loads node.js
+app/page.tsx
+
+requests properties from Django:
+apiService.get('/api/properties/')
+path('api/properties/', include('property.urls')),
+
+frontend sends :
+GET /api/properties/
+
+
+
+
+
+
+
+
+
+
+
+
+So:
+
+localhost:3000 → Next.js
+localhost:8000 → Django
+
+it knows the Django server is:
+http://localhost:8000
+
+So the actual request becomes:
+http://localhost:8000/api/properties/
+
+==> main url.py =>  path('api/properties/', include('property.urls')),
+
+
+/api/auth/myreservations/
+             │
+             ▼
+      useraccount/urls.py
+             │
+             ▼
+      property_api.reservations_list
+             │
+             ▼
+         Reservation
+
+http://localhost:3000/myreservations
+internally calls:
+http://localhost:8000/api/auth/myreservations/
+project urls.py :  path('api/auth/', include('useraccount.urls')),
+here useraccount.urls calls model useraccount we made it ,in it there is urls /myreservation
+
+                    ┌─────────────────────┐
+                    │      Next.js        │
+                    │    localhost:3000   │
+                    └──────────┬──────────┘
+                               │
+                     HTTP/API requests
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │       Django        │
+                    │    localhost:8000   │
+                    └──────────┬──────────┘
+                               │
+             ┌─────────────────┼─────────────────┐
+             │                 │                 │
+             ▼                 ▼                 ▼
+         Properties         Users          Reservations
+             │                 │                 │
+             └─────────────────┴─────────────────┘
+                               │
+                               ▼
+                       ┌──────────────┐
+                       │  PostgreSQL  │
+                       └──────────────┘
+
+----------------------------------------------------------
+What is a serializer?
+This is one of the most important Django REST Framework concepts.
+frond doenst understand object.
+object --> json
+front understands json
+
+User chooses dates
+        │
+        ▼
+Next.js ReservationSidebar
+        │
+        ▼
+POST /api/properties/<id>/book/
+        │
+        ▼
+Django
+        │
+        ▼
+Reservation.objects.create(...)
+        │
+        ▼
+PostgreSQL
+
+
+
+Authentication
+--------------
+
+
+User logs in
+     │
+     ▼
+Django
+     │
+     ▼
+JWT access token
+     │
+     ▼
+Next.js stores/uses token
+     │
+     ▼
+API requests include:
+Authorization: Bearer <token>
+
+
+What is JWT?
+
+JWT = JSON Web Token
+
+It is an identity card.
+
+
+
+
+Browser
+   │
+   ▼
+Next.js
+   │
+   ▼
+apiService.post()
+   │
+   ▼
+Django URL Router
+   │
+   ▼
+book_property()
+   │
+   ▼
+JWT Authentication
+   │
+   ▼
+request.user
+   │
+   ▼
+Reservation.objects.create()
+   │
+   ▼
+Django ORM
+   │
+   ▼
+PostgreSQL
+   │
+   ▼
+Reservation Saved
+   │
+   ▼
+JSON Response
+   │
+   ▼
+Frontend Updated

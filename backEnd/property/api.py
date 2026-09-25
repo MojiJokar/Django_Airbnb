@@ -3,8 +3,10 @@ from django.http import JsonResponse
 from rest_framework.decorators import api_view, authentication_classes, permission_classes
 from rest_framework_simplejwt.tokens import AccessToken
 # from .forms import PropertyForm
-from .models import Property
-from .serializers import PropertiesListSerializer
+# from .models import Property
+from .models import Property, Reservation
+# from .serializers import PropertiesListSerializer
+from .serializers import PropertiesListSerializer, ReservationsListSerializer
 from useraccount.models import User
 
 @api_view(['GET'])
@@ -92,6 +94,20 @@ def properties_list(request):
         'data': serializer.data,
         
     })
+
+
+@api_view(['GET'])
+def reservations_list(request):
+    reservations = Reservation.objects.filter(created_by=request.user)
+
+    serializer = ReservationsListSerializer(reservations, many=True)
+
+    return JsonResponse(serializer.data, safe=False)
+
+
+
+
+
 
 
 # @api_view(['GET'])

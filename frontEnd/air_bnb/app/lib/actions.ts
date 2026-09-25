@@ -1,4 +1,4 @@
-```ts
+
 'use server';
 
 import { cookies } from 'next/headers';
@@ -147,4 +147,4 @@ export async function getRefreshToken() {
 
     return refreshToken;
 }
-```
+

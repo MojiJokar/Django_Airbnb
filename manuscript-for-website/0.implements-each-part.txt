@@ -11,8 +11,10 @@ Property list
 Property detail
 
 2.
-Landlord detail page
-My reservations
+Landlord detail page: http://localhost:3000/landlords/dfd: create lanlords/[id]/page.tsx(add button) ,create  app>components>ContactButton.tsx , 
+page.tsx in it ==>
+
+My reservations:
 My propertes
 Inbox
 Conversation
