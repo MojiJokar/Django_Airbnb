@@ -1,5 +1,5 @@
 VIP:
-you must do these things to get the front in browwer
+you must do these things to get the front in browser
 1.
 Docker command to run containers in PowerShell:
 run in (env)for back :
