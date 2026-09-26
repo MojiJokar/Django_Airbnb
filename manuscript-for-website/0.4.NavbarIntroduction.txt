@@ -1,0 +1,42 @@
+Navbar:
+------------------------------------------------------------------------------------
+under app create a  folder component  , they are reusable small pieces of code 
+app >> components/Navbar/Navbar.tsx, searchFilter.tsx
+
+layout.tsx
+we have some changes in layout.tsxtitle for Metadata
+
+page.tsx
+to use whole site clearn all between first and last main,here we include our propertylist, categori and other components to be visible 
+
+component>Navbar.tsx>layout.tsx
+Navbar.tsx  > layout.tsx
+
+components,Navbar.tsx, searchFilter.tsx
+Navbar we make something and add it in main layout.tsx  of the whole project
+refresh page , it comes 
+Navbar.tsx > add in >> layout.tsx
+
+Logo:
+develop navbar with spaces and foto 
+put a foto in  this directory : front/air_bnb/public/
+
+Include searchFilter into Navbar.tsx
+create a  searchFilter.tsx
+add it in Navbar.tsx
+
+Make searchFilter.tsx
+heroicon.com for menu search:
+https://heroicons.com/
+
+to complete Navbar we add usernav.tsxadd, Propertybutton.tsx add them all in inside app>component>Navbar.tsx and not main Navbar.tsx 
+
+Category:
+add categories.tsx and add it in main page.tsx 
+
+
+
+
+-------------Summary---------------
+we have a folder components and folder navbar , we make for each item we need then add that file into navbar.tsx
+navbar.tsx(addpropertyButton,searchFilter)

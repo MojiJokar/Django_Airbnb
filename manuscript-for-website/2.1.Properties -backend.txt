@@ -1,16 +1,6 @@
 develop django , web, Postgres, Docker, dockerCompose
 ---------------------------------------------------------------
 
-
-Advanced properties and propertlisItem
-we checked and got 3 fotos or propties on the front static and used the advanced code:
-here we have to import and correct some files but one importatnt is action.ts 
-here connected to back so we will go to back then come back here:
-START BACKEND developMENT---------------------------------------------------------------------
-DONT mix up  frontend forlder for front , backend folder for back , go to backend by cd .. or any comand !
-folder called: django-bnb-backend
-project called: django_bnb_backend
-
 1.create virtual env
 d\moji-django-bnb-back> python -m venv env
 .\env\Scripts\Activate.ps1

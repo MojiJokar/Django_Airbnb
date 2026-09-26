@@ -1,7 +1,30 @@
+resuable we can use these compenents places:
+app/
+├── components/
+│   └── properties/
+│       ├── PropertyList.tsx
+│       ├── PropertyListItem.tsx
+│       ├── ReservationSidebar.tsx
+│       └── FavoriteButton.tsx
+│
+└── properties/
+    └── [id]/
+        └── page.tsx
+
+
+/properties/123
+/properties/abc
+/properties/9ee72abd-a8f2-4d8c-aa0c-3c5116987967
+
+http://localhost:3000/properties/9ee72abd-a8f2-4d8c-aa0c-3c5116987967
+view of propertyDetail:
+http://localhost:8000/api/properties/9ee72abd-a8f2-4d8c-aa0c-3c5116987967/  
+we get :
+{"id": "9ee72abd-a8f2-4d8c-aa0c-3c5116987967", "title": "new", "price_per_night": 2000, "image_url": "http://localhost:8000/media/uploads/properties/Beach_1.jpg"}
 categories.tsx  make the icons for our categories add in main page.rsx and code inside  categories.tsx
 add properlist in main page.tsx and then code inside properlist and import propertlisItem in it 
 
-Propertiy List
+Propertiy List simple :
 example to show and test a items 3 times :To show 3 PropertyListItem components on a page, create a parent page and use a grid with 3 columns.
 in component Folder  in make folder  properties [id] folder , two independant files called properlist, propertylistItem
 first , 
@@ -19,8 +42,44 @@ we can see our page
 
 we have done all properties id, its pages properlist and item and git push
 
-END OF PART 1========================
 Advanced properties and propertlisItem
 we checked and got 3 fotos or propties on the front static and used the advanced code:
 here we have to import and correct some files but one importatnt is action.ts 
 here connected to back so we will go to back then come back here:
+======================HOw this works:
+
+http://localhost:3000/properties/9ee72abd-a8f2-4d8c-aa0c-3c5116987967
+
+Browser
+   ↓
+Django URL
+   ↓
+property/urls.py
+   ↓
+property_detail()
+   ↓
+Database
+   ↓
+JSON response
+
+
+Test URL:
+Next.js
+   ↓
+/properties/9ee72abd-a8f2-4d8c-aa0c-3c5116987967
+   ↓
+params
+   ↓
+await params
+   ↓
+id = 9ee72abd-a8f2-4d8c-aa0c-3c5116987967
+   ↓
+apiService.get()
+   ↓
+Django
+   ↓
+/api/properties/9ee72abd-a8f2-4d8c-aa0c-3c5116987967/
+   ↓
+property_detail()
+   ↓
+JSON

@@ -35,7 +35,6 @@ Browser
 │ Database        │
 └─────────────────┘
 
-those run inside docker:
 Docker
 │
 ├── frontend container
@@ -53,18 +52,7 @@ path('api/properties/', include('property.urls')),
 
 frontend sends :
 GET /api/properties/
-
-
-
-
-
-
-
-
-
-
-
-
+--------------------------------------------------
 So:
 
 localhost:3000 → Next.js
@@ -125,7 +113,7 @@ here useraccount.urls calls model useraccount we made it ,in it there is urls /m
 What is a serializer?
 This is one of the most important Django REST Framework concepts.
 frond doenst understand object.
-object --> json
+serializer converts object --> json
 front understands json
 
 User chooses dates
@@ -145,7 +133,7 @@ Reservation.objects.create(...)
         ▼
 PostgreSQL
 
-
+-------------------------------------------------
 
 Authentication
 --------------
@@ -168,14 +156,12 @@ Authorization: Bearer <token>
 
 
 What is JWT?
-
 JWT = JSON Web Token
-
 It is an identity card.
 
 
 
-
+Example For a  simple Reservation:
 Browser
    │
    ▼
