@@ -176,13 +176,18 @@ const apiService = {
         return json;
     },
 };
-
 export default apiService;
 
+
+
+// // 
+// import { getAccessToken } from '../lib/actions';
 
 // const apiService = {
 //     get: async function (url: string): Promise<any> {
 //         console.log('GET:', url);
+
+//         const accessToken = await getAccessToken();
 
 //         const response = await fetch(
 //             `${process.env.NEXT_PUBLIC_API_HOST}${url}`,
@@ -191,6 +196,9 @@ export default apiService;
 //                 headers: {
 //                     Accept: 'application/json',
 //                     'Content-Type': 'application/json',
+//                     ...(accessToken
+//                         ? { Authorization: `Bearer ${accessToken}` }
+//                         : {}),
 //                 },
 //             }
 //         );
@@ -237,14 +245,25 @@ export default apiService;
 //     ): Promise<any> {
 //         console.log('POST:', url, data);
 
+//         const accessToken = await getAccessToken();
+
+//         const isFormData = data instanceof FormData;
+
 //         const response = await fetch(
 //             `${process.env.NEXT_PUBLIC_API_HOST}${url}`,
 //             {
 //                 method: 'POST',
-//                 body: JSON.stringify(data),
+//                 body: isFormData
+//                     ? data
+//                     : JSON.stringify(data),
 //                 headers: {
 //                     Accept: 'application/json',
-//                     'Content-Type': 'application/json',
+//                     ...(isFormData
+//                         ? {}
+//                         : { 'Content-Type': 'application/json' }),
+//                     ...(accessToken
+//                         ? { Authorization: `Bearer ${accessToken}` }
+//                         : {}),
 //                 },
 //             }
 //         );
@@ -340,4 +359,3 @@ export default apiService;
 //     },
 // };
 
-// export default apiService;

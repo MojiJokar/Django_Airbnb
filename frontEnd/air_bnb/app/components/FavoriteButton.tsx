@@ -1,6 +1,7 @@
 'use client';
 
-import apiService from "../services/apiService";
+import apiService from "../services/apiService"
+// import { apiService } from '@/app/services/apiService';
 
 interface FavoriteButtonProps {
     id: string;

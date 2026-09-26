@@ -1,3 +1,62 @@
+// const ReservationSidebar =  () => {
+//         return (
+//             <p>Reservation side bar hello</p>
+
+//         )
+// }
+
+// export default ReservationSidebar;
+
+//------------------------------------------------------
+// works and ok !!!!!!!!!!!
+// const ReservationSidebar =  () => {
+//     return (
+//         <aside className="mb-6 p-3 border border-gray-400 rounded-xl">
+
+//             <p>Reservationsidebarhello</p>
+//             <h2 className="mb=5 text-2xl">250$</h2>
+//             <div className="mb-6 p-3 border border-gray-400 rounded-xl">
+//                 <label className=" mb-2block font-bold text-xs">Guests</label>
+//                 <select className="w-full -ml-1 text-xm">
+//                     <option >1</option>
+//                     <option >2</option>
+//                     <option >3</option>
+//                     <option >4</option>
+//                 </select>     
+//             </div>
+//             <div className="w-full mb-6 py-6 text-center text-white bg-red-500 hover:bg-red-700 rounded-xl">
+//                 Book
+//             </div>
+
+//             <div className="mb-4 flex justify-between align-center">
+//                 <p>200$ * 400</p>
+//                 <p>800$</p>
+
+//             </div>
+//             <div className="mb-4 flex justify-between align-center">
+//                 <p>Djangobnb fee</p>
+//                 <p>40$</p>
+
+//             </div>
+//             <hr />
+//             <div className="mb-4 flex justify-between align-center front-bold">
+//                 <p>Total </p>
+//                 <p>840$</p>
+
+//             </div>
+
+//         </aside>
+
+//     )
+// }
+
+// export default ReservationSidebar;
+
+ 
+
+
+
+//-------------------
 'use client';
 
 import {useState, useEffect} from 'react';
