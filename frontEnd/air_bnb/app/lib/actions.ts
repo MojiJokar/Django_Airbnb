@@ -135,24 +135,55 @@ export async function getUserId() {
     return userId || null;
 }
 
+// to get from front tempo we  coment this part 
+// export async function getAccessToken() {
+//     const cookieStore = await cookies();
+
+//     let accessToken = cookieStore.get('session_access_token')?.value;
+
+//     if (!accessToken) {
+//         const refreshToken = cookieStore.get('session_refresh_token')?.value;
+
+//         if (!refreshToken) {
+//             console.log('No access or refresh token available');
+//             return null;
+//         }
+
+//         accessToken = await handleRefresh();
+//     }
+
+//     return accessToken;
+// }
+
+// change acccessTokenwith this:
 export async function getAccessToken() {
     const cookieStore = await cookies();
 
-    let accessToken = cookieStore.get('session_access_token')?.value;
+    const accessToken =
+        cookieStore.get('session_access_token')?.value;
 
-    if (!accessToken) {
-        const refreshToken = cookieStore.get('session_refresh_token')?.value;
+    const refreshToken =
+        cookieStore.get('session_refresh_token')?.value;
 
-        if (!refreshToken) {
-            console.log('No access or refresh token available');
-            return null;
-        }
+    console.log('ACCESS TOKEN EXISTS:', !!accessToken);
+    console.log('REFRESH TOKEN EXISTS:', !!refreshToken);
 
-        accessToken = await handleRefresh();
+    if (!accessToken && !refreshToken) {
+        console.log('No access or refresh token available');
+        return null;
+    }
+
+    if (!accessToken && refreshToken) {
+        return await handleRefresh();
     }
 
     return accessToken;
 }
+
+
+
+
+
 
 export async function getRefreshToken() {
     const cookieStore = await cookies();

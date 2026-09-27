@@ -83,3 +83,24 @@ Django
 property_detail()
    ↓
 JSON
+
+-------------when you click on property "foto " you can get detail and bigger foto about it 
+http://localhost:3000/properties/9ee72abd-a8f2-4d8c-aa0c-3c5116987967
+
+PropertyList
+     ↓
+property.image_url
+     ↓
+Image works ✅
+     ↓
+Click property
+     ↓
+/properties/[id] works ✅
+     ↓
+Django returns image_url ✅
+     ↓
+Detail page
+     ↓
+Image is being rendered/configured
+
+

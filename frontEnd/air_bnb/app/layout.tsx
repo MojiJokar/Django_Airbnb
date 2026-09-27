@@ -33,7 +33,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Inter } from "next/font/google";
-import Navbar from "./components/navbar/Navbar";
+// import Navbar from "./components/navbar/Navbar";
+import Navbar from "./components/Navbar/Navbar";
+import Modal from "./components/modals/Modal";
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
 //   subsets: ["latin"],
@@ -74,6 +76,7 @@ export default function RootLayout({ children, }: Readonly<{children: React.Reac
         <div className="pt-32">
           {children}
         </div>
+        <Modal /> 
       </body>
     </html>
   );

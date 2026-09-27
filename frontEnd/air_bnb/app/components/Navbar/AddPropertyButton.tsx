@@ -39,7 +39,7 @@ const AddPropertyButton: React.FC<AddPropertyButtonProps> = ({
 
     const airbnbYourHome = () => {
 
-        console.log("BEFORE:", useAddPropertyModal.getState().isOpen);
+        console.log("BEFOREAddPpBUtton:", useAddPropertyModal.getState().isOpen);
 
         addPropertyModal.open();
     
@@ -51,13 +51,15 @@ const AddPropertyButton: React.FC<AddPropertyButtonProps> = ({
             onClick={airbnbYourHome}
             className="p-2 cursor-pointer text-sm font-semibold rounded-full hover:bg-gray-200"
         >
-            Djangobnb your home
+            AddPptyButton.tsx
         </div>
     )
 }
 
 export default AddPropertyButton;
 
+
+//-------------------------------------------------------------------
 // real code following:
 // 'use client';
 

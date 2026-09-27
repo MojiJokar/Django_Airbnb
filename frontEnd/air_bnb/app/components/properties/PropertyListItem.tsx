@@ -92,6 +92,7 @@ const PropertyListItem: React.FC<PropertyProps> = ({
     return (
         <div 
             className="cursor-pointer"
+            // here it goes to properties[id] and fetch all its data :ppDetailsPage
             onClick={() => router.push(`/properties/${property.id}`)}
         >
             <div className="relative overflow-hidden aspect-square rounded-xl">
