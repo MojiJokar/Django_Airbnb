@@ -8,24 +8,98 @@
 
 // // export default Navbar;
 
+// 'use client';
+// import { useState } from "react";
+// import MenuLink from "./MenuLink";
+// const Navbar = () => {
+//     const [isOpen, setIsOpen] = useState(false)
+//     return (
+//         <div className="p-2 relative inline-block border rounded-full">
+//             <button 
+//             className="flex items-center gap-2 cursor-pointer"
+            
+//             onClick={() =>setIsOpen(!isOpen)}
 
 
+//             >
 
+//                 <svg
+//                     fill="none"
+//                     viewBox="0 0 24 24"
+//                     strokeWidth="1.5"
+//                     stroke="currentColor"
+//                     className="w-6 h-6"
+//                 >
+//                     <path
+//                         strokeLinecap="round"
+//                         strokeLinejoin="round"
+//                         d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+//                     />
+//                 </svg>
 
-'use client';
+//                 <svg
+//                     fill="none"
+//                     viewBox="0 0 24 24"
+//                     strokeWidth="1.5"
+//                     stroke="currentColor"
+//                     className="w-6 h-6"
+//                 >
+//                     <path
+//                         strokeLinecap="round"
+//                         strokeLinejoin="round"
+//                         d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+//                     />
+//                 </svg>
+//             </button>
+//             {isOpen && (
+//                 <div className="w-[220px] absolute top-[60px] right-0 bg-white border rounded-xl shadow-md flex flex-col cursor-pointer">
+//                            <MenuLink
+//                                 label="log in"
+//                                 onClick={() => console.log('login clicked')}
+//                            />
+//                            <MenuLink
+//                                 label="Sign Up"
+//                                 onClick={() => console.log('Signed up clicked')}
+//                            />
+//                 </div>    
+//             )}
+//         </div>
+//     );
+// };
+
+// export default Navbar;
+
+//------------------------------------
+"use client";
+
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+
 import MenuLink from "./MenuLink";
-const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(true)
+import useLoginModal from "@/app/hooks/useLoginModal";
+import useSignupModal from "@/app/hooks/useSignupModal";
+
+const UserNav = () => {
+    const router = useRouter();
+    const loginModal = useLoginModal();
+    const signupModal = useSignupModal();
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
-        <div className="p-2 relative inline-block border rounded-full">
-            <button className="flex items-center gap-2 cursor-pointer">
+        <div className="relative inline-block rounded-full border p-2">
+
+            <button
+                type="button"
+                onClick={() => setIsOpen(!isOpen)}
+                className="flex items-center gap-2"
+            >
+                {/* Menu icon */}
                 <svg
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
                     stroke="currentColor"
-                    className="w-6 h-6"
+                    className="h-6 w-6"
                 >
                     <path
                         strokeLinecap="round"
@@ -34,12 +108,13 @@ const Navbar = () => {
                     />
                 </svg>
 
+                {/* User icon */}
                 <svg
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
                     stroke="currentColor"
-                    className="w-6 h-6"
+                    className="h-6 w-6"
                 >
                     <path
                         strokeLinecap="round"
@@ -48,25 +123,201 @@ const Navbar = () => {
                     />
                 </svg>
             </button>
+
             {isOpen && (
-                <div className="w-[220px] absolute top-[60px] right-0 bg-white border rounded-xl shadow-md flex flex-col cursor-pointer">
-                           <MenuLink
-                                label="log in"
-                                onClick={() => console.log('login clicked')}
-                           />
-                           <MenuLink
-                                label="Sign Up"
-                                onClick={() => console.log('Signed up clicked')}
-                           />
-                </div>    
+                <div className="absolute right-0 top-[60px] z-40 flex w-[220px] flex-col rounded-xl border bg-white shadow-md">
+
+                    <MenuLink
+                        label="Inbox"
+                        onClick={() => {
+                            setIsOpen(false);
+                            router.push("/inbox");
+                        }}
+                    />
+
+                    {/* <MenuLink
+                        label="My properties"
+                        onClick={() => {
+                            setIsOpen(false);
+                            router.push("/myproperties");
+                        }}
+                    />
+
+                    <MenuLink
+                        label="My favorites"
+                        onClick={() => {
+                            setIsOpen(false);
+                            router.push("/myfavorites");
+                        }}
+                    />
+
+                    <MenuLink
+                        label="My reservations"
+                        onClick={() => {
+                            setIsOpen(false);
+                            router.push("/myreservations");
+                        }}
+                    /> */}
+
+                    <MenuLink
+                        label="Log in"
+                        onClick={() => {
+                            console.log("Login clicked");
+
+                            setIsOpen(false);
+
+                            loginModal.open();
+                        }}
+                    />
+                                        <MenuLink
+                        label="sign Up "
+                        onClick={() => {
+                            console.log("Sign up ");
+
+                            setIsOpen(false);
+
+                            signupModal.open();
+                        }}
+                    />
+
+                </div>
             )}
         </div>
     );
 };
 
-export default Navbar;
+export default UserNav;
 
-//---------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//------------------works fine---------------------------------------------------
+// 'use client';
+
+// import { useRouter } from "next/navigation";
+// import { useState } from "react";
+
+// import MenuLink from "./MenuLink";
+
+
+// import useLoginModal from "@/app/hooks/useLoginModal";
+// import useSignupModal from "@/app/hooks/useSignupModal";
+
+// // interface UserNavProps {
+// //     userId?: string | null;
+// // }
+
+// const UserNav= () => {
+   
+
+//     const router = useRouter();
+//     const loginModal = useLoginModal();
+//     const signupModal = useSignupModal();
+//     const [isOpen, setIsOpen] = useState(false)
+
+//     console.log('test usernav.tsx is opened')
+
+//     return (
+//         <div className="p-2 relative inline-block border rounded-full">
+//             <button 
+//                 onClick={() => setIsOpen(!isOpen)}
+//                 className="flex items-center"
+//             >
+//                 <svg fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+//                     <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+//                 </svg>
+
+//                 <svg fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+//                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+//                 </svg>
+//             </button>
+
+//             {isOpen && (
+//                 <div className="w-[220px] absolute top-[60px] right-0 bg-white border rounded-xl shadow-md flex flex-col cursor-pointer">
+                  
+//                         <>
+//                             <MenuLink
+//                                 label='Inbox'
+//                                 onClick={() => {
+//                                     setIsOpen(false);
+//                                     router.push('/inbox');
+//                                 }}
+//                             />
+
+//                             <MenuLink
+//                                 label='My properties'
+//                                 onClick={() => {
+//                                     setIsOpen(false);
+//                                     router.push('/myproperties');
+//                                 }}
+//                             />
+
+//                             <MenuLink
+//                                 label='My favorites'
+//                                 onClick={() => {
+//                                     setIsOpen(false);
+//                                     router.push('/myfavorites');
+//                                 }}
+//                             />
+
+//                             <MenuLink
+//                                 label='My reservations'
+//                                 onClick={() => {
+//                                     setIsOpen(false);
+//                                     router.push('/myreservations');
+//                                 }}
+//                             />
+
+
+//                             <MenuLink 
+//                                 label='Log in'
+//                                 onClick={() => {
+//                                   console.log('clicked button log in')
+//                                   loginModal.open()
+//                                 }}
+//                             />
+
+//                             <MenuLink 
+//                                 label='Sign up'
+//                                 onClick={() => {
+//                                     setIsOpen(false);
+//                                     signupModal.open();
+//                                 }}
+//                             />
+//                         </>
+                  
+//                 </div>
+//             )}
+//         </div>
+//     )
+// }
+
+// export default UserNav;
+
+
+
+//-------------------------------
 // 'use client';
 
 // import { useRouter } from "next/navigation";
@@ -168,6 +419,3 @@ export default Navbar;
 // }
 
 // export default UserNav;
-
-
-

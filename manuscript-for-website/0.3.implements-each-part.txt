@@ -14,9 +14,10 @@ Property detail
 Landlord detail page: http://localhost:3000/landlords/dfd: create lanlords/[id]/page.tsx(add button) ,create  app>components>ContactButton.tsx , 
 page.tsx in it ==>
 My reservations:myconversation/page.tsx 
-
+userMenu pop up , my properties, Landlord page 
 My propertes
-
+Login :  we need to install : npm install zustand , when we click the window pops up 
+Sign up 
 
 3.BackEnd
 Install and setup Docker
