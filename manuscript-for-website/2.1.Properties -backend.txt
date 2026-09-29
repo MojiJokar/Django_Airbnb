@@ -1,0 +1,217 @@
+develop django , web, Postgres, Docker, dockerCompose
+---------------------------------------------------------------
+
+1.create virtual env
+d\moji-django-bnb-back> python -m venv env
+.\env\Scripts\Activate.ps1
+pip install django
+
+
+2.
+python.exe -m pip install --upgrade pip
+
+django-admin startproject django_bnb_backend .  
+
+
+
+if we check in our inside the backend we see our project and  env
+moji-django-bnb-back> ls
+
+
+    Directory: C:\Users\mmb20\OneDrive\Desktop\PROJECTS\backend\moji-django-bnb-back
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         9/18/2026   8:49 AM                django_bnb_backend
+d-----         9/18/2026   8:43 AM                env
+-a----         9/18/2026   8:49 AM            696 manage.py
+
+you can get your django server , run  where there is  manage.py 
+python manage.py runserver
+open in brower:
+http://localhost:8000/
+
+
+create requirements .txt
+
+pip freeze
+asgiref==3.12.1
+Django==6.1.1
+sqlparse==0.6.0
+tzdata==2026.4
+copy django in it 
+list of all  for this project:
+Django==5.0.2
+psycopg2-binary==2.9.9
+dj-rest-auth==4.0.0
+django-allauth==0.52.0
+django-cors-headers==4.3.1
+djangorestframework==3.14.0
+djangorestframework-simplejwt==5.3.1
+pillow==10.2.0
+channels==4.0.0
+daphne==4.0.0
+gunicorn==21.2.0
+python-dotenv==1.0.1
+--------------------------
+Docker only as example:
+--- we must use both dockerfile with dockercompose in our case . however we can 
+only have one dockerfile for one container 
+this is example:
+docker build -t django-bnb . ==> creates image
+in dockercompose it builds from dockerfile where dockerfile is located
+build: .
+docker run -p 8000:8000 django-bnb  ==> run container
+
+
+
+very important :
+moji-django-bnb-back/
+│
+├── django_bnb_backend/
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── ...
+│
+├── env/
+│
+├── .env.dev
+├── docker-compose.yml
+├── Dockerfile
+├── manage.py
+└── requirements.txt
+---------------------
+make a dockerfile with docker compose.ymlL
+Before Dockerfile and dockerCompose:
+in requirements.txt that you made put :
+
+***
+docker-compose build   ==> creates image
+docker-compose up   ==> creates container and run it 
+
+
+so in dockerfle can install it as its command
+
+---Docker with dockercompose
+Docker:
+in the root directory , where there is  your  manage.py create:
+dockerfile create 
+
+
+---
+dockercompose :
+Volumes : says that first addresss should persisit in the second address
+looks for your manage.py in your dockerCompose
+.:/usr/src/django_bnb_backend/ means your current manage.py copy into the
+directory of the docker which is :/usr/src/django_bnb_backend/
+
+------------------------------------------------------------
+when you  coded both dockerfile and dockercompose run following :
+(env) PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\Django_bnb\backend> docker-compose up --build
+
+==============================if you want to start your app next day :
+Turn on your dockerdesktop
+got to ==> moji-django-bnb-back(backend wehere thre is dockercompose file) and Activate your env : .\env\Scripts\Activate.ps1
+back to yoiur dockercompose file and run :  docker-compose up -d
+VIP:
+http://localhost:8000/
+NOt:
+0.0.0.0//fsdfsdfsdfsf
+
+Add Postgress to project and docker=========================================
+in project settings.py  many things such as :
+
+import os 
+SECRET_KEY = OS.environ.get("SECRET_KEY")
+....
+
+change settings for example in debug , bsecause we are 
+in dev  we dont see error message in brower , but we 
+want to see errors  we change debug and secret key in settings
+
+SECRET_KEY = os.environ.get("SECRET_KEY")
+DEBUG = bool(os.environ.get("DEBUG" , default=0))
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALOWED_HOSTS").split("")
+......
+
+create  .env.dev: put all secret keys in there 
+
+
+create a  new dockercompose with new or add new line for  postgress  and put all for django then for postgress:
+
+deactivvate and :
+docker-compose down --remove-orphans
+
+turn on your dockerDesktop:
+
+
+
+if we have  unapplied migration :
+docker-compose exec web python manage.py migrate
+*** turn off in settings your app  installed , because you get error!
+in our dockerdesktop we will see two backedn-db-1 and backend-web-1 dotenv
+http://localhost:8000/
+
+***
+to guarantee that database always doenst sleep and run , make a entrypoint and add it in dockercompose
+========================================EntryPoint=============================================
+create a file and do and add in your dockerfile some changes. 
+docker-compose up --build
+
+
+-------------------------------------------------END OF DOCKER & DOKCERcompose--------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Get properties in the forntend and list them  this part is after serializers and api 
+
+
+
+find app, componentes, properties , propertylist
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------
+more detail:
+BackEnd:
+docker use for admin , Postgresql and web
+in back:
+we made admin for front and used postgress and web using the docker , now docker is running and app is on in browser 

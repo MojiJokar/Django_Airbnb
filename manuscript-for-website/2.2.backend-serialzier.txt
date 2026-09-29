@@ -1,0 +1,224 @@
+for REST do following L 
+==================================
+in requirements add res 
+dj-rest-auth==4.0.0
+django-allauth==0.52.0
+django-cors-headers==4.3.1
+djangorestframework==3.14.0
+djangorestframework-simplejwt==5.3.1
+pillow==10.2.0
+channels==4.0.0
+daphne==4.0.0
+
+
+ADMIN django:
+----------------------------------------------------------------------------
+(env)docker-compose exec web python manage.py startapp useraccount
+
+when virtual enirorment is active  run the command 
+we create a user app :
+(env) PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\Django_bnb\backend> docker-compose exec web python manage.py startapp useraccount
+
+then create a model for it 
+model:
+we create a model called:useraccount
+
+
+in main settings add it .
+
+
+inside its model , create a model called  customusermanager
+
+(env) PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\Django_bnb\backend> docker-compose up -d    
+(env) PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\backend\moji-django-bnb-back> docker-compose exec web python manage.py makemigrations
+(env) PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\backend\moji-django-bnb-back> docker-compose exec web python manage.py flush
+
+DONE
+----------------------------------------------------------
+### every time when you wanna have a new model just do this:
+
+docker-compose up -d
+        ↓
+  docker-compose exet web python manage.py startapp ******
+  create model
+edit settings.py
+        ↓
+docker-compose exec web python manage.py makemigrations
+        ↓
+docker-compose exec web python manage.py migrate
+000000000000000000000000000000000000000000000000000000000000000
+
+
+
+
+
+
+new model for auth, jwt:
+---------------------------------------------------------------------------------
+* we can delete all from docker desktop and run over again :dockercompose build 
+
+configuration, in settings for  auth, jwt and etc 
+
+add more line in settings above installed,app 
+migrate again the postgress
+you should down , then up again 
+
+
+Model : Property
+------------------------------------------------------------------------------------
+(env) PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\backend\moji-django-bnb-back> docker-compose exec web python manage.py startapp property 
+
+add it in :
+ettings, intsll apps  add it 
+
+confgure drf, cores, etc
+
+doceker-compose up 
+
+ create app  for peropeties:
+ ==========================================================
+after creating  a new property, inside its model we fill in all
+down
+makemigrations
+migrate
+
+
+
+serializer:
+-------------serializer.py-----api.py-------------------------------------------------------
+serializer take data from model input into jason format
+
+serializer:
+insidee mode we created called property create a file  called, serializer.py
+make a file called :
+api.py also to  make url available from frontend 
+
+property> url.py,  main url.py too : 
+make url for prperty 
+
+
+* if you create something in serializer and see it can be dockercompose up then localhost doesnt show after changes ,do folloing:
+docker-compose down
+docker-compose build --no-cache web
+docker-compose up -d
+
+docker-compose logs web
+http://localhost:8000
+docker-compose exec web python manage.py makemigrations
+docker-compose exec web python manage.py migrate
+
+docker-compose logs web
+
+http://localhost:8000/api/properties/
+
+{"data": []}
+
+
+Model superUser--------------------------------------------------
+we need to create a superUser for testing
+
+
+\moji-django-bnb-back> .\env\Scripts\Activate.ps1
+(env) PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\backend\moji-django-bnb-back> 
+
+
+docker exec -it backend-web-1 python manage.py createsuperuser
+
+12345678Bb$ i password , rememmber
+http://localhost:8000/admin/ , insert data and tahts it 
+
+to add property goes to admin.py of the property  andd a line to see it in localhost admin the peroperty
+
+from .models import Property
+
+admin.site.register(Property)
+
+refresh admin , its there
+
+Log in Admin fill admin prop , foto , test , save it 
+
+we will see:
+http://localhost:8000/api/properties/
+you get this :
+{"data": [{"id": "69f71127-550f-405b-8ea0-3ec93015c9fe", "title": "beach", "price_per_night": 10, "image_url": "http://localhost:8000/media/uploads/properties/my_photo_white_background.png"}]}
+
+Get Properties in frontend----------------------------
+
+DONE-------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+Summary:
+docker use for admin , Postgresql and web
+in back:
+we made admin for front and used postgress and web using the docker , now docker is running and app is on in browser 
+==============================if you want to start your app next day :
+Turn on your dockerdesktop
+got to ==> moji-django-bnb-back and Activate your env : .\env\Scripts\Activate.ps1
+back to yoiur dockercompose file and run :  docker-compose up -d
+http://localhost:8000/
+
+you wil see in brower:
+admin/
+api/properties/
+^media/(?P<path>.*)$
+The empty path didn’t match any of these.
+
+----get the foto from Admin to front page------------------------
+Get the peroperty in fortend and list  return them :
+in PropertyList we do some changes 
+here we have contact with REST 
+
+
+PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\moji-django-bnb> npm run dev                       
+http://localhost:3000/
+
+$ if any issues regarding setting we must refer to back 
+
+in admin we save some fotoes with some information :(back is on , while dockerdesktop is running or by )
+docker-compose up -d
+when we get json in brower we can see it in our inspect as well
+in back :http://localhost:8000/api/properties/
+{"data": [{"id": "dbc58079-2944-4891-b1ce-f5ffe006f60d", "title": "beach", "price_per_night": 1, "image_url": "http://localhost:8000/media/uploads/properties/beach_1_ovUXD46.jpg"}]}
+
+right click , find  inspect we can get all json we have on front too .
+
+Front:
+PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\front>air_bnb> npm run dev  
+
+next.config.ts:
+we had some typo issues :propertiylist !!!! instead  propertylist 
+we fix properylistitem and propertylist , also for foto must open next.config.ts and change it 
+
+
+===propetylist, propertyitelList  =====OPEN TWO TERMINAL TO RUN SERVER AND CODE ON THE OTHER TERMINAL================
+Frontend server is on :YOU CAN SEARCH 
+http://localhost:3000/properties/dfsdffs
+http://localhost:3000/properties/dfsdffs
+
+to run front:
+(env) PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\Django_bnb\frontend\air_bnb> npm run dev
+
+Restarting the server to apply the changes...
+▲ Next.js 16.3.5 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://169.254.228.97:3000
+✓ Ready in 2.7s
+✓ Running next.config.ts took 181ms
+
+
+Done:
+summary:
+-------------------------------------------------------------------------------------
+we add foto in admin and we get fotos in front 
+
+

@@ -44,7 +44,7 @@
 
 import Image from "next/image";
 import ContactButton from "@/app/components/ContactButton";
-
+import PropertyList from "@/app/components/properties/PropertyList";
 const LandlordDetailPage = () => {
 
     return (
@@ -61,13 +61,14 @@ const LandlordDetailPage = () => {
                         />
                         <h1 className="mt-6 text-2xl">John Doe</h1>
                         <ContactButton/>
-                        contactssss
-
-                           
-                                
-                                
+                            contactsTest     
                     </div>
                 </aside>
+                <div className="col-span-3 pl-0 md:pl-6">
+                    <div className="grid grid-cols-1 md:grid-cols-3  gap-6">
+                        <PropertyList/>
+                    </div>
+                </div>
                 
             </div>
 

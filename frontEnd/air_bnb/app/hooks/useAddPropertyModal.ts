@@ -1,15 +1,61 @@
+
 import { create } from "zustand";
 
-interface AddPropertyModalStore {
+interface LoginModalStore {
     isOpen: boolean;
     open: () => void;
     close: () => void;
 }
 
-const useAddPropertyModal = create<AddPropertyModalStore>((set) => ({
+const useLoginModal = create<LoginModalStore>((set) => ({
     isOpen: false,
+
     open: () => set({ isOpen: true }),
-    close: () => set({ isOpen: false })
+
+    close: () => set({ isOpen: false }),
 }));
 
-export default useAddPropertyModal;
+export default useLoginModal;
+
+
+
+
+
+
+
+
+//works very well
+// import { create } from "zustand";
+
+// interface AddPropertyModalStore {
+//     isOpen: boolean;
+//     open: () => void;
+//     close: () => void;
+// }
+
+// const useAddPropertyModal = create<AddPropertyModalStore>((set) => ({
+//     isOpen: false,
+//     open: () => set({ isOpen: true }),
+//     close: () => set({ isOpen: false })
+// }));
+
+// export default useAddPropertyModal;
+
+
+
+
+// import { create } from "zustand";
+
+// interface AddPropertyModalStore {
+//     isOpen: boolean;
+//     open: () => void;
+//     close: () => void;
+// }
+
+// const useAddPropertyModal = create<AddPropertyModalStore>((set) => ({
+//     isOpen: false,
+//     open: () => set({ isOpen: true }),
+//     close: () => set({ isOpen: false })
+// }));
+
+// export default useAddPropertyModal;

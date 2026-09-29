@@ -1,22 +1,48 @@
-'use client';
+// 'use client';
+
+// interface MenuLinkProps {
+//     label: string;
+//     onClick: () => void;
+// }
+
+// const MenuLink: React.FC<MenuLinkProps> = ({
+//     label,
+//     onClick
+// }) => {
+//     return (
+//         <div 
+//             onClick={onClick}
+//             className="px-5 py-4 cursor-pointer hover:bg-gray-100 transition"
+//         >
+//             {label}
+//         </div>
+//     )
+// }
+
+// export default MenuLink;
+
+
+//-------------
+"use client";
 
 interface MenuLinkProps {
     label: string;
     onClick: () => void;
 }
 
-const MenuLink: React.FC<MenuLinkProps> = ({
+const MenuLink = ({
     label,
-    onClick
-}) => {
+    onClick,
+}: MenuLinkProps) => {
     return (
-        <div 
+        <button
+            type="button"
             onClick={onClick}
-            className="px-5 py-4 cursor-pointer hover:bg-gray-100 transition"
+            className="w-full px-5 py-3 text-left hover:bg-gray-100"
         >
             {label}
-        </div>
-    )
-}
+        </button>
+    );
+};
 
 export default MenuLink;
