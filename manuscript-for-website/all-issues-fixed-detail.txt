@@ -3,11 +3,17 @@ in terminal run : npm run dev inside air_bnb where our front files located:
 PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\Django_Airbnb\frontend\air_bnb> npm run dev
 open Browser and run : http://localhost:3000/  to see front working 
 and:
+turn on your dockerDesktop !!!
 go to backend where ther is dockerfile and check if docker is running:
 docker PS, if not  docker-compose up -d , if they show are working  open another Browser run django server:
+PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\Django_Airbnb\backend> docker-compose up -d
+[+] Running 3/3
+ ✔ Network backend_default  Created                                                                                                                                                                                 0.3s 
+ ✔ Container backend-db-1   Started                                                                                                                                                                                 6.4s 
+ ✔ Container backend-web-1  Started  
 
 if all is ok , these one must be working:
--------------------
+--------------------------------------------------------------------
 these ones working:
 http://localhost:3000/
 http://localhost:3000/landlords/dfd
@@ -15,5 +21,8 @@ lgoin
 signup 
 http://localhost:3000/admin
 
---------------------
+----------------------------------------------------------------------
+on brower ou can get :http://localhost:8000/api/properties/
+
+{"data": [{"id": "9ee72abd-a8f2-4d8c-aa0c-3c5116987967", "title": "new", "price_per_night": 2000, "image_url": "http://localhost:8000/media/uploads/properties/Beach_1.jpg"}, {"id": "85365244-6f32-470f-904f-7b69228aa1e0", "title": "test front", "price_per_night": 5, "image_url": "http://localhost:8000/media/uploads/properties/beach_1_mMPJGNV.jpg"}]}
 
