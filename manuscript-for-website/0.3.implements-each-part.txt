@@ -47,6 +47,19 @@ Sign up modal
 5.Add properties, API endpoint send data addpropertymodal.tsx - component addproperty.tsx(add property )
 to create for country we make Forms->Addforms(selectCountry) add to addpropertymodal , property forms(security of data provided by User) ,
 add in api.py. 
-6.
-7.
-8.
+- create modal, API endpoint , send data
+modal, addproperty, 
+
+6.Book property, lan dlaord page my properties, my reservations, my favorite, 
+
+7.setup websocket in the background 
+make it possible to connect 
+send/receive message
+store and load message
+start new conversaiton
+
+
+8.set up search filter
+Modal for search filter
+country for search filter
+calendar for check in / check out dates
