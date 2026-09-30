@@ -16,7 +16,7 @@ venv/
 .env
 .env.*
 !.env.example
-
+.env.proddev
 # Django
 *.log
 db.sqlite3
