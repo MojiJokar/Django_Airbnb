@@ -1,0 +1,19 @@
+run :
+in terminal run : npm run dev inside air_bnb where our front files located:
+PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\Django_Airbnb\frontend\air_bnb> npm run dev
+open Browser and run : http://localhost:3000/  to see front working 
+and:
+go to backend where ther is dockerfile and check if docker is running:
+docker PS, if not  docker-compose up -d , if they show are working  open another Browser run django server:
+
+if all is ok , these one must be working:
+-------------------
+these ones working:
+http://localhost:3000/
+http://localhost:3000/landlords/dfd
+lgoin 
+signup 
+http://localhost:3000/admin
+
+--------------------
+
