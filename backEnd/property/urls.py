@@ -7,7 +7,7 @@ urlpatterns = [
     path('', api.property_list, name='api_properties_list'),
    
     # for test:
-    # path('api/properties/', api.properties_list, name='api_properties_list'),
+    path('api/properties/', api.property_list, name='api_properties_list'),
     path('<uuid:id>/',api.property_detail,name='api_property_detail'),
     # path('create/', api.create_property, name='api_create_property'),
     
