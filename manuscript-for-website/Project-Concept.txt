@@ -168,7 +168,7 @@ Browser
 Next.js
    │
    ▼
-apiService.post()
+apiService.post()--backend
    │
    ▼
 Django URL Router
