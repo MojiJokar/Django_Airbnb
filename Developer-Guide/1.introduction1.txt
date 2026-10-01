@@ -1,6 +1,9 @@
 VIP:
 There are 3 branches and all test and everything is happening on main, to see the previous codes you can refer to another branches:
 
+to login / SignUp:
+usename : dany2@yahoo.com ,  or dany3
+password :981*****13****818***B****$
 
 introduction:
 ---------------------------------
