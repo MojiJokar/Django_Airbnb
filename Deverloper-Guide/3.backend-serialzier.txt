@@ -133,7 +133,7 @@ CONTAINER ID   IMAGE         COMMAND                  CREATED        STATUS     
 7f2a2c6c94d9   backend-web   "/usr/src/django_bnb…"   27 hours ago   Up 27 hours   0.0.0.0:8000->8000/tcp   backend-web-1
 018f68048749   postgres:15   "docker-entrypoint.s…"   27 hours ago   Up 27 hours   5432/tcp                 backend-db-1 
 
-docker exec -it backend-web-1 python manage.py createsuperuser
+docker exec -it backend-web python manage.py createsuperuser
 
 12345678Bb$ i password , rememmber
 http://localhost:8000/admin/ , insert data and tahts it 
