@@ -159,20 +159,6 @@ Get Properties in frontend----------------------------
 
 
 
-
-
-
-
-
-
-
-
-
-
-Summary:
-docker use for admin , Postgresql and web
-in back:
-we made admin for front and used postgress and web using the docker , now docker is running and app is on in browser 
 ==============================if you want to start your app next day :
 Turn on your dockerdesktop
 got to ==> moji-django-bnb-back and Activate your env : .\env\Scripts\Activate.ps1

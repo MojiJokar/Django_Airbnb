@@ -5,10 +5,10 @@ import Image from 'next/image';
 import { ChangeEvent, useState } from 'react';
 import Modal from './Modal';
 import CustomButton from '../forms/CustomButton';
-import Categories from '../addproperty/Categories';
+// import Categories from '../addproperty/Categories';
 
 import useAddPropertyModal from '@/app/hooks/useAddPropertyModal';
-import SelectCountry, {SelectCountryValue} from '../forms/SelectCountry';
+// import SelectCountry, {SelectCountryValue} from '../forms/SelectCountry';
 
 import apiService from '@/app/services/apiService';
 import { useRouter } from 'next/navigation';
@@ -26,7 +26,7 @@ const AddPropertyModal = () => {
     const [dataBedrooms, setDataBedrooms] = useState('');
     const [dataBathrooms, setDataBathrooms] = useState('');
     const [dataGuests, setDataGuests] = useState('');
-    const [dataCountry, setDataCountry] = useState<SelectCountryValue>();
+    // const [dataCountry, setDataCountry] = useState<SelectCountryValue>();
     const [dataImage, setDataImage] = useState<File | null>(null);
 
     //
