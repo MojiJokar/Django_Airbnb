@@ -218,7 +218,7 @@ apt install node.js
 to check 
 node -v
 
-we need to install node in do  server 
+we need to install node in do  server :
 npm run uild 
 
 to start local server

@@ -1,3 +1,7 @@
+//bridge between the Next.js frontend and the Django backend,
+//lib,actions.ts =>centralizing application actions /api logic that communicate with
+//  the backend or perform business operations
+//server action, Authentication action data validation/transformation
 'use server';
 
 import { cookies } from 'next/headers';

@@ -11,12 +11,17 @@ Property list
 Property detail
 
 2.
-Landlord detail page: http://localhost:3000/landlords/dfd: create lanlords/[id]/page.tsx(add button) ,create  app>components>ContactButton.tsx , 
+Landlord detail page: http://localhost:3000/landlords/dfd: create lanlords/[id]/page.tsx(add button) ,opens  app>components>landlords>page.tsx , 
 page.tsx in it ==>
+we must login to see reservations:
+http://localhost:3000/myreservations
+
 My reservations:myconversation/page.tsx 
 userMenu pop up , my properties, Landlord page
 My propertes
-Login :  we need to install : npm install zustand , when we click the window pops up 
+
+Login :
+we need to install : npm install zustand , when we click the window pops up 
 Sign up 
 
 3.BackEnd
