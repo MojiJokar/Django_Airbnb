@@ -6,6 +6,12 @@ usename : dany2@yahoo.com ,  or dany3
 password :981*****13****818***B****$
 
 introduction:
+
+docker exec -it backend-web python manage.py createsuperuser
+choose password :
+12345678B*******  
+http://localhost:8000/admin/ , insert data and tahts it 
+in future if you want to log in , my email. mmb***** and this password needed 
 ---------------------------------
 frontEnd
 Angular, Next.js, Tailwind
