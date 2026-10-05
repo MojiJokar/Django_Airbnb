@@ -8,6 +8,7 @@ from .models import Property, Reservation
 from .serializers import PropertiesListSerializer, ReservationsListSerializer
 
 
+
 @api_view(['GET'])
 @authentication_classes([])
 @permission_classes([])
@@ -206,20 +207,157 @@ def property_reservations(request, pk):
     return JsonResponse(serializer.data, safe=False)
 
 
-@api_view(['POST', 'FILES'])
+# @api_view(['POST', 'FILES'])
+# def create_property(request):
+#     form = PropertyForm(request.POST, request.FILES)
+
+#     if form.is_valid():
+#         property = form.save(commit=False)
+#         property.landlord = request.user
+#         property.save()
+
+#         return JsonResponse({'success': True})
+#     else:
+#         print('error', form.errors, form.non_field_errors)
+#         return JsonResponse({'errors': form.errors.as_json()}, status=400)
+
+
+# @api_view(['POST'])
+# def create_property(request):
+#     print("POST DATA:", request.POST)
+#     print("FILES:", request.FILES)
+#     print("USER:", request.user)
+
+#     form = PropertyForm(
+#         request.POST,
+#         request.FILES
+#     )
+
+#     if form.is_valid():
+#         property = form.save(commit=False)
+#         property.landlord = request.user
+#         property.save()
+
+#         return JsonResponse({
+#             'success': True
+#         })
+
+#     print("FORM ERRORS:", form.errors)
+
+#     return JsonResponse(
+#         {
+#             'success': False,
+#             'errors': form.errors
+#         },
+#         status=400
+#     )
+
+# @api_view(['POST'])
+# def create_property(request):
+#     print("POST DATA:", request.POST)
+#     print("FILES:", request.FILES)
+#     print("USER:", request.user)
+
+#     form = PropertyForm(
+#         request.POST,
+#         request.FILES
+#     )
+
+#     if form.is_valid():
+#         property = form.save(commit=False)
+#         property.landlord = request.user
+#         property.save()
+
+#         return JsonResponse({
+#             'success': True
+#         })
+
+#     print("FORM ERRORS:", form.errors)
+
+#     return JsonResponse(
+#         {
+#             'success': False,
+#             'errors': form.errors
+#         },
+#         status=400
+    # )
+    
+    
+    
+# @api_view(['POST'])
+# def create_property(request):
+#     print("========== CREATE PROPERTY ==========")
+#     print("USER:", request.user)
+#     print("AUTHENTICATED:", request.user.is_authenticated)
+#     print("POST:", request.POST)
+#     print("FILES:", request.FILES)
+
+#     form = PropertyForm(
+#         request.POST,
+#         request.FILES
+#     )
+
+#     print("FORM CREATED")
+
+#     if form.is_valid():
+#         print("FORM VALID")
+
+#         property = form.save(commit=False)
+
+#         print("PROPERTY CREATED:", property)
+
+#         property.landlord = request.user
+
+#         print("LANDLORD SET")
+
+#         property.save()
+
+#         print("PROPERTY SAVED:", property.id)
+
+#         return JsonResponse({
+#             'success': True
+#         })
+
+#     print("FORM INVALID")
+#     print("FORM ERRORS:", form.errors)
+
+#     return JsonResponse(
+#         {
+#             'success': False,
+#             'errors': form.errors
+#         },
+#         status=400
+#     )    
+
+from rest_framework.decorators import api_view
+from django.http import JsonResponse
+import traceback
+
+@api_view(['POST'])
 def create_property(request):
-    form = PropertyForm(request.POST, request.FILES)
+    try:
+        form = PropertyForm(request.POST, request.FILES)
 
-    if form.is_valid():
-        property = form.save(commit=False)
-        property.landlord = request.user
-        property.save()
+        if form.is_valid():
+            property = form.save(commit=False)
+            property.landlord = request.user
+            property.save()
 
-        return JsonResponse({'success': True})
-    else:
-        print('error', form.errors, form.non_field_errors)
-        return JsonResponse({'errors': form.errors.as_json()}, status=400)
+            return JsonResponse({
+                'success': True
+            })
 
+        return JsonResponse({
+            'errors': form.errors
+        }, status=400)
+
+    except Exception as e:
+        traceback.print_exc()
+
+        return JsonResponse({
+            'success': False,
+            'error': str(e)
+        }, status=500)
 
 @api_view(['POST'])
 def book_property(request, pk):

@@ -34,7 +34,7 @@
 
 // export default SelectCountry;
 
-//-------------------------npm install react-select---------------------
+//---add propertyButton choose category -----npm install react-select---------------------
 'use client';
 
 import Select from 'react-select';
