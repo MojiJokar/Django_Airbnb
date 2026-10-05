@@ -1,12 +1,3 @@
-// const ContactButton = () => {
-//     return (
-//         <p>Button</p>
-//     )
-// }
-
-// export default ContactButton;
-
-
 
 const ContactButton = () => {
     return (
