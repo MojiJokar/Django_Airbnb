@@ -160,6 +160,7 @@ import { handleLogin } from "@/app/lib/actions";
 // import apiService from "@/app/services/apiService";
 import { loginUser } from "@/app/lib/authActions";
 
+
 const LoginModal = () => {
     const router = useRouter()
     const loginModal = useLoginModal()
@@ -181,11 +182,24 @@ const LoginModal = () => {
 
         console.log("LOGIN RESPONSE:", response);
         
+        // if (response.success) {
+        //     console.log("Logged in");
+        //     console.log(response.data);
+        // } else {
+        //     console.log(response.error);
+        // }
         if (response.success) {
             console.log("Logged in");
-            console.log(response.data);
+        
+            loginModal.close();
+        
+            router.refresh();
         } else {
-            console.log(response.error);
+            console.log("LOGIN FAILED:", response.error);
+        
+            setErrors([
+                response.error || "Unable to log in.",
+            ]);
         }
 
 

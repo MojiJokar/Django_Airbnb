@@ -317,35 +317,91 @@ try {
 
 }
 
+// export async function handleLogin(
+// userId: string,
+// accessToken: string,
+// refreshToken: string
+// ) {
+// const cookieStore = await cookies();
+
+// cookieStore.set(USER_ID_COOKIE, userId, {
+//     httpOnly: true,
+//     secure: process.env.NODE_ENV === "production",
+//     maxAge: 60 * 60 * 24 * 7,
+//     path: "/",
+// });
+
+// cookieStore.set(ACCESS_TOKEN_COOKIE, accessToken, {
+//     httpOnly: true,
+//     secure: process.env.NODE_ENV === "production",
+//     maxAge: 60 * 60,
+//     path: "/",
+// });
+
+// cookieStore.set(REFRESH_TOKEN_COOKIE, refreshToken, {
+//     httpOnly: true,
+//     secure: process.env.NODE_ENV === "production",
+//     maxAge: 60 * 60 * 24 * 7,
+//     path: "/",
+// });
+
+// }
+
+
 export async function handleLogin(
-userId: string,
-accessToken: string,
-refreshToken: string
+    userId: string,
+    accessToken: string,
+    refreshToken: string
 ) {
-const cookieStore = await cookies();
+    console.log("HANDLE LOGIN");
+    console.log("USER ID:", userId);
+    console.log("ACCESS TOKEN EXISTS:", !!accessToken);
+    console.log("REFRESH TOKEN EXISTS:", !!refreshToken);
 
-cookieStore.set(USER_ID_COOKIE, userId, {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    maxAge: 60 * 60 * 24 * 7,
-    path: "/",
-});
+    const cookieStore = await cookies();
 
-cookieStore.set(ACCESS_TOKEN_COOKIE, accessToken, {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    maxAge: 60 * 60,
-    path: "/",
-});
+    cookieStore.set(USER_ID_COOKIE, userId, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        maxAge: 60 * 60 * 24 * 7,
+        path: "/",
+    });
 
-cookieStore.set(REFRESH_TOKEN_COOKIE, refreshToken, {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    maxAge: 60 * 60 * 24 * 7,
-    path: "/",
-});
+    cookieStore.set(ACCESS_TOKEN_COOKIE, accessToken, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        maxAge: 60 * 60,
+        path: "/",
+    });
 
+    cookieStore.set(REFRESH_TOKEN_COOKIE, refreshToken, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        maxAge: 60 * 60 * 24 * 7,
+        path: "/",
+    });
+
+    console.log("TOKENS SAVED");
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export async function resetAuthCookies() {
 const cookieStore = await cookies();

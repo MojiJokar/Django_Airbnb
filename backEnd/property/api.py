@@ -8,6 +8,14 @@ from .models import Property, Reservation
 from .serializers import PropertiesListSerializer, ReservationsListSerializer
 
 
+from rest_framework.decorators import api_view
+from django.http import JsonResponse
+
+import traceback
+
+from .forms import PropertyForm
+from .models import Property, Reservation
+
 
 @api_view(['GET'])
 @authentication_classes([])
@@ -329,14 +337,93 @@ def property_reservations(request, pk):
 #         status=400
 #     )    
 
+# from rest_framework.decorators import api_view
+# from django.http import JsonResponse
+# import traceback
+
+# @api_view(['POST'])
+# def create_property(request):
+#     try:
+#         form = PropertyForm(request.POST, request.FILES)
+
+#         if form.is_valid():
+#             property = form.save(commit=False)
+#             property.landlord = request.user
+#             property.save()
+
+#             return JsonResponse({
+#                 'success': True
+#             })
+
+#         return JsonResponse({
+#             'errors': form.errors
+#         }, status=400)
+
+#     except Exception as e:
+#         traceback.print_exc()
+
+#         return JsonResponse({
+#             'success': False,
+#             'error': str(e)
+#         }, status=500)
+
+# @api_view(['POST'])
+# def book_property(request, pk):
+#     try:
+#         start_date = request.POST.get('start_date', '')
+#         end_date = request.POST.get('end_date', '')
+#         number_of_nights = request.POST.get('number_of_nights', '')
+#         total_price = request.POST.get('total_price', '')
+#         guests = request.POST.get('guests', '')
+
+#         property = Property.objects.get(pk=pk)
+
+#         Reservation.objects.create(
+#             property=property,
+#             start_date=start_date,
+#             end_date=end_date,
+#             number_of_nights=number_of_nights,
+#             total_price=total_price,
+#             guests=guests,
+#             created_by=request.user
+#         )
+
+#         return JsonResponse({'success': True})
+#     except Exception as e:
+#         print('Error', e)
+
+#         return JsonResponse({'success': False})
+
+
+# @api_view(['POST'])
+# def toggle_favorite(request, pk):
+#     property = Property.objects.get(pk=pk)
+
+#     if request.user in property.favorited.all():
+#         property.favorited.remove(request.user)
+
+#         return JsonResponse({'is_favorite': False})
+#     else:
+#         property.favorited.add(request.user)
+
+#         return JsonResponse({'is_favorite': True}  )
+
 from rest_framework.decorators import api_view
 from django.http import JsonResponse
+
 import traceback
+
+from .forms import PropertyForm
+from .models import Property, Reservation
+
 
 @api_view(['POST'])
 def create_property(request):
     try:
-        form = PropertyForm(request.POST, request.FILES)
+        form = PropertyForm(
+            request.POST,
+            request.FILES
+        )
 
         if form.is_valid():
             property = form.save(commit=False)
@@ -347,7 +434,10 @@ def create_property(request):
                 'success': True
             })
 
+        print("FORM ERRORS:", form.errors)
+
         return JsonResponse({
+            'success': False,
             'errors': form.errors
         }, status=400)
 
@@ -359,13 +449,20 @@ def create_property(request):
             'error': str(e)
         }, status=500)
 
+
 @api_view(['POST'])
 def book_property(request, pk):
     try:
         start_date = request.POST.get('start_date', '')
         end_date = request.POST.get('end_date', '')
-        number_of_nights = request.POST.get('number_of_nights', '')
-        total_price = request.POST.get('total_price', '')
+        number_of_nights = request.POST.get(
+            'number_of_nights',
+            ''
+        )
+        total_price = request.POST.get(
+            'total_price',
+            ''
+        )
         guests = request.POST.get('guests', '')
 
         property = Property.objects.get(pk=pk)
@@ -380,11 +477,17 @@ def book_property(request, pk):
             created_by=request.user
         )
 
-        return JsonResponse({'success': True})
-    except Exception as e:
-        print('Error', e)
+        return JsonResponse({
+            'success': True
+        })
 
-        return JsonResponse({'success': False})
+    except Exception as e:
+        print('Error:', e)
+
+        return JsonResponse({
+            'success': False,
+            'error': str(e)
+        }, status=500)
 
 
 @api_view(['POST'])
@@ -394,8 +497,13 @@ def toggle_favorite(request, pk):
     if request.user in property.favorited.all():
         property.favorited.remove(request.user)
 
-        return JsonResponse({'is_favorite': False})
+        return JsonResponse({
+            'is_favorite': False
+        })
+
     else:
         property.favorited.add(request.user)
 
-        return JsonResponse({'is_favorite': True}  )
+        return JsonResponse({
+            'is_favorite': True
+        })
