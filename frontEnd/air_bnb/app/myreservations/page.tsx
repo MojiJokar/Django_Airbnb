@@ -1,22 +1,43 @@
-import Image from "next/image";
+// import Image from "next/image";
+// import apiService from "../services/apiService";
+// import Link from "next/link";
+
+// const MyReservationsPage = async () => {
+//     const reservations = await apiService.get('/api/auth/myreservations/')
+
+//     return (
+//         <main className="max-w-[1500px] mx-auto px-6 pb-6">
+//             <h1 className="my-6 text-2xl">My reservations</h1>
+
+//         </main>
+//     )
+// }
+
+// export default MyReservationsPage;
+//---------------------------------------------------
+import { redirect } from "next/navigation";
+import { getAccessToken } from "../lib/actions";
 import apiService from "../services/apiService";
-import Link from "next/link";
 
 const MyReservationsPage = async () => {
-    const reservations = await apiService.get('/api/auth/myreservations/')
+    const token = await getAccessToken();
+
+    if (!token) {
+        redirect("/login");
+    }
+
+    const reservations = await apiService.get(
+        "/api/auth/myreservations/"
+    );
 
     return (
-        <main className="max-w-[1500px] mx-auto px-6 pb-6">
-            <h1 className="my-6 text-2xl">My reservations</h1>
-
+        <main>
+            <h1>My reservations</h1>
         </main>
-    )
-}
+    );
+};
 
 export default MyReservationsPage;
-
-
-
 
 
 // import Image from "next/image";

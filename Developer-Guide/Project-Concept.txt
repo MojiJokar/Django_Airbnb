@@ -47,9 +47,9 @@ loads node.js
 app/page.tsx
 
 requests properties from Django:
-apiService.get('/api/properties/')
+apiService.get('/api/properties/') goes to main urls.py
 path('api/properties/', include('property.urls')),
-
+then it goes to app property urls.py and run the funciton , serializer or etc.
 frontend sends :
 GET /api/properties/
 --------------------------------------------------
@@ -168,7 +168,7 @@ Browser
 Next.js
    │
    ▼
-apiService.post()
+apiService.post()--backend
    │
    ▼
 Django URL Router

@@ -1,0 +1,35 @@
+                 FRONTEND
+                    │
+                    │ ❤️ click
+                    ▼
+       toggleFavorite()
+                    │
+                    ▼
+          getAccessToken()
+                    │
+          ┌─────────┴─────────┐
+          │                   │
+   access token exists?       │
+          │                   │
+         YES                  NO
+          │                   │
+          │             refresh token
+          │                   │
+          │             handleRefresh()
+          │                   │
+          │                   ▼
+          │        /api/auth/token/refresh/
+          │                   │
+          │                   ▼
+          │              Django 404 ❌
+          │                   │
+          └─────────┬─────────┘
+                    │
+                    ▼
+       favorite POST request
+                    │
+                    ▼
+       /toggle_favorite/
+                    │
+                    ▼
+              Django 401 ❌

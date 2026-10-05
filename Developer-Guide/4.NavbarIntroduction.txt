@@ -1,0 +1,39 @@
+Navbar:
+
+------------------------------------------------------------------------------------
+1.in Navbar we add all needed components like :<AddPropertyButton />. ....
+Add in layout:
+2.layout.tsx (we have three parts login, sign u p , addppModel) which you can see on page 
+AWSTemplateFormatVersion: "2010-09-09"under app create a  folder component  , they are reusable small pieces of code 
+app >> components/Navbar/Navbar.tsx, searchFilter.tsx
+
+component>Navbar.tsx>layout.tsx
+Navbar.tsx  > layout.tsx
+
+components,Navbar.tsx, searchFilter.tsx
+
+Include searchFilter into Navbar.tsx
+create a  searchFilter.tsx
+add it in Navbar.tsx
+
+Logo:
+develop navbar with spaces and foto 
+put a foto in  this directory : front/air_bnb/public/
+
+
+
+Make searchFilter.tsx
+heroicon.com for menu search:
+https://heroicons.com/
+
+to complete Navbar we add usernav.tsx, Propertybutton.tsx add them all in inside app>component>Navbar.tsx and not main Navbar.tsx 
+
+Category:
+add categories.tsx and add it in main page.tsx 
+
+
+
+
+-------------Summary---------------
+we have a folder components and folder navbar , we make for each item we need then add that file into navbar.tsx   <AddPropertyButton /
+navbar.tsx(addpropertyButton,searchFilter)

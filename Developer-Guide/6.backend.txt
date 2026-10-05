@@ -3,14 +3,16 @@ develop django , web, Postgres, Docker, dockerCompose
 
 1.create virtual env
 d\moji-django-bnb-back> python -m venv env
+
 .\env\Scripts\Activate.ps1
+
 pip install django
 
 
 2.
 python.exe -m pip install --upgrade pip
 
-django-admin startproject django_bnb_backend .  
+django-admin startproject <NameForYourProject > .  
 
 
 
@@ -56,11 +58,14 @@ gunicorn==21.2.0
 python-dotenv==1.0.1
 --------------------------
 Docker only as example:
---- we must use both dockerfile with dockercompose in our case . however we can 
+--- we must use both dockerfile with dockercompos if we have more  apps or db in our case . however we can 
 only have one dockerfile for one container 
 this is example:
 docker build -t django-bnb . ==> creates image
 in dockercompose it builds from dockerfile where dockerfile is located
+-Dockerfile
+-docker-compose.yml
+
 build: .
 docker run -p 8000:8000 django-bnb  ==> run container
 
@@ -104,7 +109,7 @@ dockerfile create
 dockercompose :
 Volumes : says that first addresss should persisit in the second address
 looks for your manage.py in your dockerCompose
-.:/usr/src/django_bnb_backend/ means your current manage.py copy into the
+.:/usr/src/django_bnb_backend/ means your current manage.py is also copied in container
 directory of the docker which is :/usr/src/django_bnb_backend/
 
 ------------------------------------------------------------
@@ -112,7 +117,7 @@ when you  coded both dockerfile and dockercompose run following :
 (env) PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\Django_bnb\backend> docker-compose up --build
 
 ==============================if you want to start your app next day :
-Turn on your dockerdesktop
+Turn on your dockerdesktop or check if your containers are up and spining : docker ps , if yes then no need to turn on your Docker desktop !
 got to ==> moji-django-bnb-back(backend wehere thre is dockercompose file) and Activate your env : .\env\Scripts\Activate.ps1
 back to yoiur dockercompose file and run :  docker-compose up -d
 VIP:
@@ -123,8 +128,11 @@ NOt:
 Add Postgress to project and docker=========================================
 in project settings.py  many things such as :
 
+add Postgress Db  instead of sqlit with all its os.get(secret_key)
+
 import os 
 SECRET_KEY = OS.environ.get("SECRET_KEY")
+import dotenv 
 ....
 
 change settings for example in debug , bsecause we are 

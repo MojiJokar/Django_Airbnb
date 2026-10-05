@@ -1,11 +1,11 @@
-const ReservationSidebar =  () => {
-        return (
-            <p>Reservation side bar hello</p>
+// const ReservationSidebar =  () => {
+//         return (
+//             <p>Reservation side bar hello</p>
 
-        )
-}
+//         )
+// }
 
-export default ReservationSidebar;
+// export default ReservationSidebar;
 
 //------------------------------------------------------
 // works and ok !!!!!!!!!!!

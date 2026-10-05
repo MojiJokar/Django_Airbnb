@@ -157,7 +157,9 @@ import { useRouter } from 'next/navigation';
 import useLoginModal from "@/app/hooks/useLoginModal";
 import CustomButton from "../forms/CustomButton";
 import { handleLogin } from "@/app/lib/actions";
-import apiService from "@/app/services/apiService";
+// import apiService from "@/app/services/apiService";
+import { loginUser } from "@/app/lib/authActions";
+
 
 const LoginModal = () => {
     const router = useRouter()
@@ -174,7 +176,38 @@ const LoginModal = () => {
 
         console.log("LOGIN DATA:", formData);
         // const response = await apiService.postWithoutToken('/api/auth/login/', JSON.stringify(formData))
-        const response = await apiService.postWithoutToken('/api/auth/login/', formData)
+        // const response = await apiService.postWithoutToken('/api/auth/login/', formData)
+
+        const response = await loginUser(formData);
+
+        console.log("LOGIN RESPONSE:", response);
+        
+        // if (response.success) {
+        //     console.log("Logged in");
+        //     console.log(response.data);
+        // } else {
+        //     console.log(response.error);
+        // }
+        if (response.success) {
+            console.log("Logged in");
+        
+            loginModal.close();
+        
+            router.refresh();
+        } else {
+            console.log("LOGIN FAILED:", response.error);
+        
+            setErrors([
+                response.error || "Unable to log in.",
+            ]);
+        }
+
+
+
+
+
+
+
         console.log("TYPE:", typeof formData);
 
         // if (response.access) {

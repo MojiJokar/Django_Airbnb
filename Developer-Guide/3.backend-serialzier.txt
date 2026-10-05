@@ -1,4 +1,9 @@
-for REST do following L 
+roadMap:
+create a  model with all following info: model, serilaizer , settings,.....
+to add data to see it works we must create a superUser to be able to log in as admin in django and add data to our new  prop
+then we can get it in our front to  see if it works or not 
+------------------------------------------------------------------------------------------------------------------------------
+AWSTemplateFormatVersion: "2010-09-09"for REST do following add in requirements.txt
 ==================================
 in requirements add res 
 dj-rest-auth==4.0.0
@@ -11,7 +16,7 @@ channels==4.0.0
 daphne==4.0.0
 
 
-ADMIN django:
+Create Model:
 ----------------------------------------------------------------------------
 (env)docker-compose exec web python manage.py startapp useraccount
 
@@ -24,7 +29,7 @@ model:
 we create a model called:useraccount
 
 
-in main settings add it .
+in main settings add it . in installed app list 
 
 
 inside its model , create a model called  customusermanager
@@ -39,7 +44,7 @@ DONE
 
 docker-compose up -d
         ↓
-  docker-compose exet web python manage.py startapp ******
+docker-compose exet web python manage.py startapp ******
   create model
 edit settings.py
         ↓
@@ -86,7 +91,7 @@ migrate
 
 serializer:
 -------------serializer.py-----api.py-------------------------------------------------------
-serializer take data from model input into jason format
+serializer take data from model  input into jason format :its command is similar to create , object.all() like for db
 
 serializer:
 insidee mode we created called property create a file  called, serializer.py
@@ -114,26 +119,33 @@ http://localhost:8000/api/properties/
 {"data": []}
 
 
-Model superUser--------------------------------------------------
+Superuser for Admin:
+---------------------------------------------------
+Model superUser
 we need to create a superUser for testing
 
 
 \moji-django-bnb-back> .\env\Scripts\Activate.ps1
 (env) PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\backend\moji-django-bnb-back> 
 
-
-docker exec -it backend-web-1 python manage.py createsuperuser
-
-12345678Bb$ i password , rememmber
-http://localhost:8000/admin/ , insert data and tahts it 
+docker ps
+CONTAINER ID   IMAGE         COMMAND                  CREATED        STATUS        PORTS                    NAMES        
+7f2a2c6c94d9   backend-web   "/usr/src/django_bnb…"   27 hours ago   Up 27 hours   0.0.0.0:8000->8000/tcp   backend-web-1
+018f68048749   postgres:15   "docker-entrypoint.s…"   27 hours ago   Up 27 hours   5432/tcp                 backend-db-1 
 
 to add property goes to admin.py of the property  andd a line to see it in localhost admin the peroperty
-
 from .models import Property
 
 admin.site.register(Property)
 
 refresh admin , its there
+
+docker exec -it backend-web python manage.py createsuperuser
+choose password :
+12345678B*******  
+http://localhost:8000/admin/ , insert data and tahts it 
+
+
 
 Log in Admin fill admin prop , foto , test , save it 
 
@@ -144,23 +156,9 @@ you get this :
 
 Get Properties in frontend----------------------------
 
-DONE-------------------------------------------------------------------------------------
 
 
 
-
-
-
-
-
-
-
-
-
-Summary:
-docker use for admin , Postgresql and web
-in back:
-we made admin for front and used postgress and web using the docker , now docker is running and app is on in browser 
 ==============================if you want to start your app next day :
 Turn on your dockerdesktop
 got to ==> moji-django-bnb-back and Activate your env : .\env\Scripts\Activate.ps1

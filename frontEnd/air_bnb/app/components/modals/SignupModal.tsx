@@ -319,7 +319,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import useSignupModal from "@/app/hooks/useSignupModal";
 import CustomButton from "../forms/CustomButton";
-import apiService from "@/app/services/apiService";
+// import apiService from "@/app/services/apiService";
 import { handleLogin } from "@/app/lib/actions";
 
 const SignupModal = () => {

@@ -11,7 +11,7 @@ app/
     └── [id]/
         └── page.tsx
 
-
+Example:
 /properties/123
 /properties/abc
 /properties/9ee72abd-a8f2-4d8c-aa0c-3c5116987967
@@ -33,11 +33,6 @@ in propertylist we wanna show item,its title, description  and etc
 add properlist to the main page.tsx
 it is a part of or main page ! Navbar is separate:
 
-http://localhost:3000/
-this is propertlisItem  comes on the page 
-we can see pagelist:
-http://localhost:3000/properties/dfsdffs
-we can see our page 
 
 
 we have done all properties id, its pages properlist and item and git push
@@ -54,7 +49,7 @@ Browser
    ↓
 Django URL
    ↓
-property/urls.py
+property/urls.py => http://localhost:8000/api/properties/
    ↓
 property_detail()
    ↓

@@ -1,0 +1,100 @@
+VIP:
+There are 3 branches and all test and everything is happening on main, to see the previous codes you can refer to another branches:
+
+to login / SignUp:
+usename : dany2@yahoo.com ,  or dany3
+password :981*****13****818***B****$
+
+introduction:
+
+docker exec -it backend-web python manage.py createsuperuser
+choose password :
+12345678B*******  
+http://localhost:8000/admin/ , insert data and tahts it 
+in future if you want to log in , my email. mmb***** and this password needed 
+---------------------------------
+frontEnd
+Angular, Next.js, Tailwind
+
+
+BackEnd:
+Django Rest Framwork DRF
+Docker, Postgresql
+
+
+Deployment:
+Channel for live chat
+Deploy on Degital Ocean/AWS
+---------------------------------------------
+create a  git repo and  add these:
+
+git init
+git add README.md
+git branch -M main
+git remote add origin https://github.com/MojiJokar/Django_Airbnb.git
+git push -u origin main
+
+cd frontEnd
+
+============================================================================
+install Node.js
+To install Node.js on Windows:
+
+Go to the official Node.js website:
+Node.js Downloads
+Download the LTS (Long Term Support) version for Windows.
+Run the downloaded .msi installer.
+In the setup wizard:
+Click Next through the prompts.
+Accept the license agreement.
+Keep the default installation options.
+Make sure Add to PATH remains enabled.
+Click Install and complete the setup.
+Close and reopen PowerShell, then verify the installation:
+
+if you dont have Node.js  you must install , add PATH then test 
+
+
+C:\Users\mmb20\OneDrive\Desktop\PROJECTS> npx create-next-app@latest
+=========
+push to github
+git init
+git commit -m "first commit"
+git remote add origin https://github.com/Mjhfsaljfhsdjfhsfsjhfsdjfhsdlfjsdhj
+git push -u origin master
+======================
+npm  run dev
+http://localhost:3000
+
+
+you must do these things to get the front in browser
+1.backend 
+Docker command to run containers in PowerShell:
+run in (env)for back :
+PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\Django_Airbnb\backend> docker-compose up -d
+http://localhost:8000/
+or test if docker is spin up and running: 
+ docker ps
+CONTAINER ID   IMAGE         COMMAND                  CREATED        STATUS        PORTS                    NAMES
+7f2a2c6c94d9   backend-web   "/usr/src/django_bnb…"   10 hours ago   Up 10 hours   0.0.0.0:8000->8000/tcp   backend-web-1
+018f68048749   postgres:15   "docker-entrypoint.s…"   10 hours ago   Up 10 hours   5432/tcp                 backend-db-1
+
+2.frontend
+front doesnt need env 
+PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\Django_Airbnb\frontend\air_bnb> npm run dev
+http://localhost:3000
+
+
+
+this project will be developed but at the moment these parts could be checkd :
+--------------------------------------------------------------------------------
+http://localhost:3000/
+or 
+after you SignUp:
+
+http://localhost:3000/properties/9ee72abd-a8f2-4d8c-aa0c-3c5116987967
+
+
+
+
+  
