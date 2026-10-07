@@ -1,13 +1,12 @@
+import { create } from 'zustand';
 
-import { create } from "zustand";
-
-interface LoginModalStore {
+interface InboxModalStore {
     isOpen: boolean;
     open: () => void;
     close: () => void;
 }
 
-const useLoginModal = create<LoginModalStore>((set) => ({
+const useInboxModal = create<InboxModalStore>((set) => ({
     isOpen: false,
 
     open: () => set({ isOpen: true }),
@@ -15,4 +14,4 @@ const useLoginModal = create<LoginModalStore>((set) => ({
     close: () => set({ isOpen: false }),
 }));
 
-export default useLoginModal;
+export default useInboxModal;

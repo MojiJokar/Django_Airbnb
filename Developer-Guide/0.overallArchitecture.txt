@@ -1,0 +1,55 @@
+                         NEXT.JS
+┌─────────────────────────────────────────────┐
+│                                             │
+│  Client Components                         │
+│                                             │
+│  LoginModal                                 │
+│  SignupModal                                │
+│  AddPropertyModal                           │
+│  PropertyList                               │
+│  FavoriteButton                             │
+│                                             │
+└───────────────────┬─────────────────────────┘
+                    │
+                    │ Server Actions
+                    ↓
+┌─────────────────────────────────────────────┐
+│                                             │
+│  app/lib/                                   │
+│                                             │
+│  authActions.ts                             │
+│  propertyActions.ts                         │
+│  favoriteActions.ts                          │
+│  actions.ts                                 │
+│                                             │
+└───────────────────┬─────────────────────────┘
+                    │
+                    ↓
+┌─────────────────────────────────────────────┐
+│                                             │
+│  app/services/apiService.ts                 │
+│                                             │
+│  get()                                      │
+│  post()                                     │
+│  postWithoutToken()                         │
+│                                             │
+│  Access token / refresh token               │
+│                                             │
+└───────────────────┬─────────────────────────┘
+                    │
+                    │ HTTP
+                    ↓
+┌─────────────────────────────────────────────┐
+│                                             │
+│  DJANGO                                     │
+│                                             │
+│  /api/auth/login/                           │
+│  /api/auth/register/                        │
+│  /api/properties/                           │
+│  /api/properties/create/                    │
+│  /toggle_favorite/                          │
+│                                             │
+└───────────────────┬─────────────────────────┘
+                    │
+                    ↓
+                 DATABASE

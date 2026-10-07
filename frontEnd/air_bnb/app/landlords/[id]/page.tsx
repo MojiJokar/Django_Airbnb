@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const LandlordDetailPage = () => {
     return (
         <main className="max-w-[1500px] mx-auto px-6 pb-6">
@@ -40,6 +41,8 @@ export default LandlordDetailPage;
 
 
 
+=======
+>>>>>>> main
 //---------------------http://localhost:3000/landlords/dfd
 
 // import Image from "next/image";
@@ -78,6 +81,7 @@ export default LandlordDetailPage;
 //     )
 // }
 
+<<<<<<< HEAD
 // export default LandlordDetailPage;
 
 
@@ -132,3 +136,6 @@ export default LandlordDetailPage;
 // }
 
 // export default LandlordDetailPage;
+=======
+export default LandlordDetailPage;
+>>>>>>> main

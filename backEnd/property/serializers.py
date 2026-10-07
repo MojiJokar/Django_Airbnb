@@ -35,7 +35,7 @@ class ReservationsListSerializer(serializers.ModelSerializer):
             'property',
         )
 
-# we  will do it next for landloard 
+# we  will do it next for landloard : we develop it later when we need it for landloard
 # class PropertiesDetailSerializer(serializers.ModelSerializer):
 #     landlord = UserDetailSerializer(read_only=True, many=False)
 
@@ -54,11 +54,3 @@ class ReservationsListSerializer(serializers.ModelSerializer):
 #         )
 
 
-# class ReservationsListSerializer(serializers.ModelSerializer):
-#     property = PropertiesListSerializer(read_only=True, many=False)
-    
-#     class Meta:
-#         model = Reservation
-#         fields = (
-#             'id', 'start_date', 'end_date', 'number_of_nights', 'total_price', 'property'
-#         )
