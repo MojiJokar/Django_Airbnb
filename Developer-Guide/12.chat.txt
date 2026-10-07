@@ -1,0 +1,119 @@
+http://localhost:3000/landlords/dfd
+frontedn>>aibnb>>app>>lanlodrs>>page.tsx
+http://localhost:3000/myreservations
+http://localhost:3000/myproperties
+http://localhost:3000/inbox
+http://localhost:3000/landlords/dfd
+Suppose your project structure is:
+app/
+ └── landlords/
+      └── [id]/
+           └── page.jsx
+
+
+Browser
+   │
+   │ GET /landlords/dfd
+   ▼
+Next.js (localhost:3000)
+   │
+   │ fetch()-`http://127.0.0.1:8000/api/landlords/${params.id}/`
+   ▼
+Django API (localhost:8000)
+   │
+   ▼
+urls.py
+   │
+   ▼
+api.py / View
+   │
+   ▼
+Serializer
+   │
+   ▼
+Django ORM
+   │
+   ▼
+PostgreSQL
+   │
+   ▲
+   │ data
+   │
+Serializer
+   │
+   ▼
+JSON Response
+   │
+   ▼
+Next.js- send HTML to browser!
+   │
+   ▼
+React Component - create  HTML
+   │
+   ▼
+HTML
+   │
+   ▼
+Browser
+
+
+
+
+
+make Conditions dynamic:
+on dockerdesktop click on container  backup to see  names of your containers: backend-web-1
+or:
+ docker ps
+CONTAINER ID   IMAGE         COMMAND                  CREATED         STATUS         PORTS                    NAMES        
+a499a6d316db   backend-web   "/usr/src/django_bnb…"   3 minutes ago   Up 3 minutes   0.0.0.0:8000->8000/tcp   backend-web-1
+b627013f647b   postgres:15   "docker-entrypoint.s…"   3 minutes ago   Up 3 minutes   5432/tcp                 backend-db-1 
+ PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\Django_Airbnb\backend> docker exec -it backend-web-1 python manage.py startapp chat
+ 
+ 
+docker exec -it backend-web-1 python manage.py makemigrations
+Migrations for 'chat':
+  chat/migrations/0001_initial.py
+    - Create model Conversation
+    - Create model ConversationMessage
+
+ admin.py
+ from django.contrib import admin
+
+# Register your models here.
+from .models import Conversation, ConversationMessage
+admin.site.register(Conversation)
+admin.site.register(ConversationMessage)
+
+
+check admin in broser
+http://localhost:8000/admin/
+
+
+serialzier.py
+
+api.py
+
+add in main urls.py the link:
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('api/properties/', include('property.urls')),
+    path('api/auth/', include('useraccount.urls')),
+    path('api/chat/', include('chat.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+in chat make a new : urls.py
+
+urlpatterns = [
+    path('', api.conversations_list, name='api_conversations_list'),
+    path('start/<uuid:user_id>/', api.conversations_start, name='api_conversations_start'),
+    path('<uuid:pk>/', api.conversations_detail, name='api_conversations_detail'),
+]
+
+in admin make for test conversation dany2 to dany3
+
+
+
+
+
+
+
