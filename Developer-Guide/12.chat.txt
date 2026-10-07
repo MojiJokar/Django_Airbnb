@@ -1,9 +1,9 @@
 http://localhost:3000/landlords/dfd
 frontedn>>aibnb>>app>>lanlodrs>>page.tsx
-http://localhost:3000/myreservations=====> need to do !!!????
-http://localhost:3000/myproperties
+http://localhost:3000/myreservations 
+http://localhost:3000/myproperties***
 http://localhost:3000/inbox
-http://localhost:3000/landlords/dfd
+http://localhost:3000/landlords/dfd***
 Suppose your project structure is:
 app/
  └── landlords/
