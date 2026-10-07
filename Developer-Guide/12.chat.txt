@@ -60,6 +60,29 @@ Browser
 
 
 
+works  , you login, inbox  , etc 
+http://localhost:3000/inbox/9ee72abd-a8f2-4d8c-aa0c-3c5116987967
+
+
+to make a  new app/model:
+PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\Django_Airbnb\backend> docker-compose down
+
+Reservations model:
+----------------------------
+add in model, api.py bookproperty
+add in admin
+add in apps.py
+install :
+PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\Django_Airbnb\backend> npm install react-date-range    
+
+
+
+
+
+
+
+
+
 
 
 make Conditions dynamic:

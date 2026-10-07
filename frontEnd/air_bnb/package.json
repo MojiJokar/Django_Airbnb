@@ -13,6 +13,7 @@
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "react-select": "^5.10.2",
+    "react-use-websocket": "^4.13.0",
     "world-countries": "^5.1.0",
     "zustand": "^5.0.15"
   },
