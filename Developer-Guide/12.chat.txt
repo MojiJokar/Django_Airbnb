@@ -11,6 +11,8 @@ app/
            └── page.jsx
 
 
+http://localhost:3000/inbox ***
+
 Browser
    │
    │ GET /landlords/dfd
