@@ -1,3 +1,6 @@
+your backend must be up and running into backend/
+docker compose up:
+You front , go to frontend,air_bnb and :npm run dev
 http://localhost:3000/landlords/dfd
 frontedn>>aibnb>>app>>lanlodrs>>page.tsx
 http://localhost:3000/myreservations=====> need to do !!!????
@@ -77,7 +80,8 @@ PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\Django_Airbnb\backend> npm install r
 
 http://localhost:3000/properties/9ee72abd-a8f2-4d8c-aa0c-3c5116987967
 
-
+click on myproperties you ll see fotos which are my properties:appears this url:
+http://localhost:3000/myproperties
 
 
 
