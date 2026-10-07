@@ -16,6 +16,7 @@ app/
 
 
 http://localhost:3000/inbox ***
+http://localhost:3000/inbox/jhlj
 
 >>>>>>> dev-backend
 Browser
