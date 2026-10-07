@@ -6,84 +6,17 @@ const MyPropertiesPage = async () => {
 
     return (
         <main className="max-w-[1500px] mx-auto px-6 pb-6">
-<<<<<<< HEAD
-            <h1 className="my-6 text-2xl">My propertiesTest!!!</h1>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <PropertyList 
-=======
             <h1 className="my-6 text-2xl">
-                My properties
+                My propertiesTest!!!
             </h1>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <PropertyList
->>>>>>> dev-backend
                     landlord_id={userId}
                 />
             </div>
         </main>
-<<<<<<< HEAD
-    )
-}
-
-export default MyPropertiesPage;
-=======
     );
 };
 
 export default MyPropertiesPage;
-
-// import { useRouter } from "next/navigation";
-// import { ConversationType } from "@/app/inbox/page";
-
-// interface ConversationProps {
-//     conversation: ConversationType;
-//     userId: string;
-// }
-
-// const Conversation: React.FC<ConversationProps> = ({
-//     conversation,
-//     userId
-// }) => {
-//     const router = useRouter();
-//     const otherUser = conversation.users.find((user) => user.id != userId)
-
-//     return (
-//         <div className="px-6 py-4 cursor-pointer border border-gray-300 rounded-xl">
-//             <p className="mb-6 text-xl">{otherUser?.name}</p>
-
-//             <p 
-//                 onClick={() => router.push(`/inbox/${conversation.id}`)}
-//                 className="text-airbnb-dark"
-//             >
-//                 Go to conversation
-//             </p>
-//         </div>
-//     )
-// }
-
-
-// // export default Conversation;
-// import { getUserId } from "../lib/actions";
-// import PropertyList from "../components/properties/PropertyList";
-
-// const MyPropertiesPage = async () => {
-//     const userId = await getUserId();
-
-//     return (
-//         <main className="max-w-[1500px] mx-auto px-6 pb-6">
-//             <h1 className="my-6 text-2xl">My properties</h1>
-
-//             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-//                 <PropertyList 
-//                     landlord_id={userId}
-//                 />
-//             </div>
-//         </main>
-//     )
-// }
-
-// export default MyPropertiesPage;
-
->>>>>>> dev-backend

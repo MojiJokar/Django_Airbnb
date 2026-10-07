@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-http://localhost:3000/landlords/dfd
-frontedn>>aibnb>>app>>lanlodrs>>page.tsx
-http://localhost:3000/myreservations 
-http://localhost:3000/myproperties***
-http://localhost:3000/inbox
-http://localhost:3000/landlords/dfd***
-=======
 your backend must be up and running into backend/
 docker compose up:
 You front , go to frontend,air_bnb and :npm run dev
@@ -23,8 +15,6 @@ app/
            └── page.jsx
 
 
-<<<<<<< HEAD
-=======
 http://localhost:3000/inbox ***
 
 >>>>>>> dev-backend
@@ -75,8 +65,7 @@ Browser
 
 
 
-<<<<<<< HEAD
-=======
+
 works  , you login, inbox  , etc 
 http://localhost:3000/inbox/9ee72abd-a8f2-4d8c-aa0c-3c5116987967
 
