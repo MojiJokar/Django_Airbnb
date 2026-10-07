@@ -118,15 +118,6 @@ const UserNav: React.FC<UserNavProps> = ({ userId }) => {
                                     signupModal.open();
                                 }}
                             />
-
-                            <MenuLink
-                                label="Inbox"
-                                onClick={() => {
-                                    console.log("Inbox clicked");
-                                    setIsOpen(false);
-                                    signupModal.open();
-                                }}
-                            />
                         </>
                     )}
                 </div>

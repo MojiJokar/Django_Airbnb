@@ -14,55 +14,116 @@ if (!API_HOST) {
 const apiService = {
     async get(url: string) {
         let accessToken = await getAccessToken();
-
-        if (!accessToken) {
-            throw new Error("No access token available");
-        }
-
-        const makeRequest = async (token: string) => {
+    
+        const makeRequest = async (token?: string) => {
             return fetch(`${API_HOST}${url}`, {
                 method: "GET",
                 headers: {
-                    Authorization: `Bearer ${token}`,
+                    ...(token
+                        ? { Authorization: `Bearer ${token}` }
+                        : {}),
                     "Content-Type": "application/json",
                 },
                 cache: "no-store",
             });
         };
-
-        let response = await makeRequest(accessToken);
-
+    
+        let response = await makeRequest(
+            accessToken || undefined
+        );
+    
         // Access token expired
-        if (response.status === 401) {
+        if (response.status === 401 && accessToken) {
             console.log("Access token expired. Refreshing...");
-
+    
             accessToken = await handleRefresh();
-
+    
             if (!accessToken) {
                 throw new Error(
                     "Could not refresh access token"
                 );
             }
-
+    
             response = await makeRequest(accessToken);
         }
-
+    
         const responseText = await response.text();
-
+    
         console.log("GET API STATUS:", response.status);
         console.log("GET API URL:", `${API_HOST}${url}`);
         console.log("GET API RESPONSE:", responseText);
-
+    
         if (!response.ok) {
             throw new Error(
                 `API error: ${response.status} - ${responseText}`
             );
         }
-
+    
         return responseText
             ? JSON.parse(responseText)
             : {};
     },
+
+
+
+
+
+
+
+
+
+
+    // async get(url: string) {
+    //     let accessToken = await getAccessToken();
+
+    //     if (!accessToken) {
+    //         throw new Error("No access token available");
+    //     }
+
+    //     const makeRequest = async (token: string) => {
+    //         return fetch(`${API_HOST}${url}`, {
+    //             method: "GET",
+    //             headers: {
+    //                 Authorization: `Bearer ${token}`,
+    //                 "Content-Type": "application/json",
+    //             },
+    //             cache: "no-store",
+    //         });
+    //     };
+
+    //     let response = await makeRequest(accessToken);
+
+    //     // Access token expired
+    //     if (response.status === 401) {
+    //         console.log("Access token expired. Refreshing...");
+
+    //         accessToken = await handleRefresh();
+
+    //         if (!accessToken) {
+    //             throw new Error(
+    //                 "Could not refresh access token"
+    //             );
+    //         }
+
+    //         response = await makeRequest(accessToken);
+    //     }
+
+    //     const responseText = await response.text();
+
+    //     console.log("GET API STATUS:", response.status);
+    //     console.log("GET API URL:", `${API_HOST}${url}`);
+    //     console.log("GET API RESPONSE:", responseText);
+
+    //     if (!response.ok) {
+    //         throw new Error(
+    //             `API error: ${response.status} - ${responseText}`
+    //         );
+    //     }
+
+    //     return responseText
+    //         ? JSON.parse(responseText)
+    //         : {};
+    // },
 
     async postWithoutToken(
         url: string,
