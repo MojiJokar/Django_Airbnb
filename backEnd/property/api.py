@@ -176,3 +176,4 @@ def toggle_favorite(request, pk):
         return JsonResponse({
             'is_favorite': True
         })
+        

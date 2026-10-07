@@ -1,4 +1,4 @@
-'use client';
+
 
 import { useRouter } from "next/navigation";
 import { ConversationType } from "@/app/inbox/page";
@@ -29,7 +29,7 @@ const Conversation: React.FC<ConversationProps> = ({
     )
 }
 
-<<<<<<< HEAD
+
 // export default Conversation;
 import { getUserId } from "../lib/actions";
 import PropertyList from "../components/properties/PropertyList";
@@ -51,6 +51,4 @@ const MyPropertiesPage = async () => {
 }
 
 export default MyPropertiesPage;
-=======
-export default Conversation;
->>>>>>> main
+

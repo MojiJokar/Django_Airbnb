@@ -75,7 +75,7 @@ add in apps.py
 install :
 PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\Django_Airbnb\backend> npm install react-date-range    
 
-
+http://localhost:3000/properties/9ee72abd-a8f2-4d8c-aa0c-3c5116987967
 
 
 
