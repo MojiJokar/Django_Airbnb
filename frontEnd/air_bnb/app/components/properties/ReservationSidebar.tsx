@@ -238,6 +238,7 @@ const initialDateRange: Range = {
 
 export type Property = {
     id: string;
+    title: string;
     guests: number;
     price_per_night: number;
 };
@@ -263,6 +264,8 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
     const [bookedDates, setBookedDates] = useState<Date[]>([]);
 
     const [guests, setGuests] = useState<string>('1');
+    const [bookingSuccess, setBookingSuccess] = useState(false);
+
 
     const guestsRange = Array.from(
         { length: property.guests || 1 },
@@ -296,11 +299,18 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
                 total_price: totalPrice,
             });
 
+            // if (response.success) {
+            //     console.log('Booking successful');
+            // } else {
+            //     console.log('Something went wrong...');
+            // }
             if (response.success) {
                 console.log('Booking successful');
+                setBookingSuccess(true);
             } else {
                 console.log('Something went wrong...');
             }
+
         } catch (error) {
             console.error('Booking error:', error);
         }
@@ -505,6 +515,102 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
 
                 <p>${totalPrice}</p>
             </div>
+            {/* // Booking success modal test */}
+            {bookingSuccess && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+                    <div className="relative w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl">
+                        <button
+                            type="button"
+                            onClick={() => setBookingSuccess(false)}
+                            className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full text-2xl text-gray-500 hover:bg-gray-100 hover:text-gray-900"
+                            aria-label="Close"
+                        >
+                        ×
+                        </button>
+
+                        <div className="mb-5 text-center">
+                            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
+                                <span className="text-3xl text-green-600">✓</span>
+                            </div>
+
+                            <h2 className="text-2xl font-bold text-gray-900">
+                                Booking successful!
+                            </h2>
+
+                            <p className="mt-2 text-gray-600">
+                                Your reservation has been confirmed.
+                            </p>
+                        </div>
+
+                        <div className="space-y-3 rounded-xl bg-gray-50 p-4 text-sm">
+                            <div className="flex justify-between">
+                                <span className="text-gray-600">Property</span>
+                                <span className="font-semibold text-gray-900">
+                                    {property.title}
+                                </span>
+                            </div>
+
+                            <div className="flex justify-between">
+                                <span className="text-gray-600">Guests</span>
+                                <span className="font-semibold text-gray-900">
+                                    {guests}
+                                </span>
+                            </div>
+
+                            <div className="flex justify-between">
+                                <span className="text-gray-600">Check-in</span>
+                                <span className="font-semibold text-gray-900">
+                                    {dateRange.startDate
+                                        ? format(dateRange.startDate, 'dd MMM yyyy')
+                                        : ''}
+                                </span>
+                            </div>
+
+                            <div className="flex justify-between">
+                                <span className="text-gray-600">Check-out</span>
+                                <span className="font-semibold text-gray-900">
+                                    {dateRange.endDate
+                                        ? format(dateRange.endDate, 'dd MMM yyyy')
+                                        : ''}
+                                </span>
+                            </div>
+
+                            <div className="flex justify-between">
+                                <span className="text-gray-600">Nights</span>
+                                <span className="font-semibold text-gray-900">
+                                    {nights}
+                                </span>
+                            </div>
+
+                            <hr />
+
+                            <div className="flex justify-between text-base">
+                                <span className="font-bold text-gray-900">
+                                    Total
+                                </span>
+                                <span className="font-bold text-gray-900">
+                                    ${totalPrice}
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <button
+                            type="button"
+                            onClick={() => setBookingSuccess(false)}
+                            className="mt-6 w-full rounded-xl bg-airbnb py-4 font-bold text-white hover:bg-airbnb-dark"
+                        >
+                            Done
+                        </button>
+                    </div>
+                </div>
+            )}
+
+
+
+
+
+
         </aside>
     );
 };
