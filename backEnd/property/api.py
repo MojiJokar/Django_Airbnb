@@ -12,7 +12,7 @@ from django.http import JsonResponse
 from rest_framework.decorators import api_view, authentication_classes, permission_classes
 
 from .models import Property, Reservation
-from .serializers import PropertiesListSerializer, ReservationsListSerializer
+from .serializers import PropertiesListSerializer, ReservationsListSerializer, PropertiesDetailSerializer
 
 
 from rest_framework.decorators import api_view
@@ -52,7 +52,7 @@ def property_detail(request, id):
             status=404
         )
 
-    serializer = PropertiesListSerializer(property)
+    serializer = PropertiesDetailSerializer(property)
 
     return JsonResponse(serializer.data)
 
