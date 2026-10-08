@@ -22,7 +22,7 @@ migarate
 admin.site
 api
 url
-npm install react-date-range(Calendar):
+npm install react-date-range(Calendar)
 npm install react-date-range
 front,app,components,properties, reservatinsideBar,and also, properties[]page.tsx
 these 2 files depend on each other
