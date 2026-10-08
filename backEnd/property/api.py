@@ -119,20 +119,58 @@ def create_property(request):
         }, status=500)
 
 
+# @api_view(['POST'])
+# def book_property(request, pk):
+#     try:
+#         start_date = request.POST.get('start_date', '')
+#         end_date = request.POST.get('end_date', '')
+#         number_of_nights = request.POST.get(
+#             'number_of_nights',
+#             ''
+#         )
+#         total_price = request.POST.get(
+#             'total_price',
+#             ''
+#         )
+#         guests = request.POST.get('guests', '')
+
+#         property = Property.objects.get(pk=pk)
+
+#         Reservation.objects.create(
+#             property=property,
+#             start_date=start_date,
+#             end_date=end_date,
+#             number_of_nights=number_of_nights,
+#             total_price=total_price,
+#             guests=guests,
+#             created_by=request.user
+#         )
+
+#         return JsonResponse({
+#             'success': True
+#         })
+
+#     except Exception as e:
+#         print('Error:', e)
+
+#         return JsonResponse({
+#             'success': False,
+#             'error': str(e)
+#         }, status=500)
 @api_view(['POST'])
 def book_property(request, pk):
     try:
-        start_date = request.POST.get('start_date', '')
-        end_date = request.POST.get('end_date', '')
-        number_of_nights = request.POST.get(
-            'number_of_nights',
-            ''
-        )
-        total_price = request.POST.get(
-            'total_price',
-            ''
-        )
-        guests = request.POST.get('guests', '')
+        start_date = request.data.get('start_date')
+        end_date = request.data.get('end_date')
+        number_of_nights = request.data.get('number_of_nights')
+        total_price = request.data.get('total_price')
+        guests = request.data.get('guests')
+
+        if not start_date or not end_date:
+            return JsonResponse({
+                'success': False,
+                'error': 'Start date and end date are required.'
+            }, status=400)
 
         property = Property.objects.get(pk=pk)
 
@@ -143,16 +181,21 @@ def book_property(request, pk):
             number_of_nights=number_of_nights,
             total_price=total_price,
             guests=guests,
-            created_by=request.user
+            created_by=request.user,
         )
 
         return JsonResponse({
             'success': True
         })
 
+    except Property.DoesNotExist:
+        return JsonResponse({
+            'success': False,
+            'error': 'Property not found.'
+        }, status=404)
+
     except Exception as e:
         print('Error:', e)
-
         return JsonResponse({
             'success': False,
             'error': str(e)

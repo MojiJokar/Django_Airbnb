@@ -463,15 +463,22 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
                 </p>
             </div>
 
-            {/* Book button */}
+         
             <div
                 onClick={performBooking}
                 className="mb-6 w-full cursor-pointer rounded-xl bg-airbnb py-6 text-center text-white hover:bg-airbnb-dark"
             >
                 Book
             </div>
+            {/* <button
+                    type="button"
+                    onClick={performBooking}
+                    className="mb-6 w-full rounded-xl bg-airbnb py-6 text-center text-white hover:bg-airbnb-dark"
+            >
+                    Book
+            </button> */}
 
-            {/* Price */}
+            
             <div className="mb-4 flex justify-between items-center">
                 <p>
                     ${property.price_per_night} ×{' '}
