@@ -98,6 +98,18 @@ const UserNav: React.FC<UserNavProps> = ({ userId }) => {
                             />
 
                             <LogoutButton />
+
+
+                            <MenuLink
+                                label="Landlord"
+                                onClick={() => {
+                                    setIsOpen(false);
+                                    // router.push("/landlords/dfd");
+                                    router.push(`/landlords/${userId}`);
+                                    
+                                }}
+                            />
+         
                         </>
                     ) : (
                         <>
