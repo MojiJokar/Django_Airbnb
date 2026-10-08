@@ -1,0 +1,35 @@
+if you add a field to models what you should do :
+ docker ps
+CONTAINER ID   IMAGE         COMMAND                  CREATED          STATUS          PORTS                    NAMES        
+c54f03e453d5   backend-web   "/usr/src/django_bnb…"   12 seconds ago   Up 6 seconds    0.0.0.0:8000->8000/tcp   backend-web-1
+363162a3d1af   postgres:15   "docker-entrypoint.s…"   14 seconds ago   Up 10 seconds   5432/tcp                 backend-db-1 
+
+find name of service :
+PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\Django_Airbnb\backend> docker compose exec web  python manage.py makemigrations  
+PS C:\Users\mmb20\OneDrive\Desktop\PROJECTS\Django_Airbnb\backend> docker compose exec web  python manage.py migarate     
+
+docker compose restart
+or down then up -d
+
+test endpoint:
+http://localhost:8000/api/chat/
+
+
+
+flowchart:
+make model reservation 
+migarate
+admin.site
+api
+url
+npm install react-date-range(Calendar):
+npm install react-date-range
+front,app,components,properties, reservatinsideBar,and also, properties[]page.tsx
+these 2 files depend on each other
+
+
+
+
+
+
+

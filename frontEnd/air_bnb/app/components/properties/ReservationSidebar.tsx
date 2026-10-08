@@ -3,9 +3,14 @@
 import {useState, useEffect} from 'react';
 import {Range} from 'react-date-range';
 import { differenceInDays, eachDayOfInterval, format} from 'date-fns';
-// import DatePicker from '../forms/Calendar';
+import DatePicker from '../forms/Calendar';
 import apiService from '@/app/services/apiService';
 import useLoginModal from '@/app/hooks/useLoginModal';
+import {
+    getPropertyReservations,
+    bookProperty
+} from '@/app/lib/reservationActions';
+
 
 const initialDateRange = {
     startDate: new Date(),
@@ -44,14 +49,21 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
 
         if (userId) {
             if (dateRange.startDate && dateRange.endDate) {
-                const formData = new FormData();
-                formData.append('guests', guests);
-                formData.append('start_date', format(dateRange.startDate, 'yyyy-MM-dd'));
-                formData.append('end_date', format(dateRange.endDate, 'yyyy-MM-dd'));
-                formData.append('number_of_nights', nights.toString());
-                formData.append('total_price', totalPrice.toString());
+                // const formData = new FormData();
+                // formData.append('guests', guests);
+                // formData.append('start_date', format(dateRange.startDate, 'yyyy-MM-dd'));
+                // formData.append('end_date', format(dateRange.endDate, 'yyyy-MM-dd'));
+                // formData.append('number_of_nights', nights.toString());
+                // formData.append('total_price', totalPrice.toString());
 
-                const response = await apiService.post(`/api/properties/${property.id}/book/`, formData);
+                // const response = await apiService.post(`/api/properties/${property.id}/book/`, formData);
+                const response = await bookProperty(property.id, {
+                    guests,
+                    start_date: format(dateRange.startDate, 'yyyy-MM-dd'),
+                    end_date: format(dateRange.endDate, 'yyyy-MM-dd'),
+                    number_of_nights: nights,
+                    total_price: totalPrice,
+                });
 
                 if (response.success) {
                     console.log('Bookin successful')
@@ -80,7 +92,8 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
     }
 
     const getReservations = async () => {
-        const reservations = await apiService.get(`/api/properties/${property.id}/reservations/`)
+        // const reservations = await apiService.get(`/api/properties/${property.id}/reservations/`)
+        const reservations = await getPropertyReservations(property.id);
 
         let dates: Date[] = [];
 
@@ -131,7 +144,7 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
                 onChange={(value) => _setDateRange(value.selection)}
             />
 
-            <div className="mb-6 p-3 border border-gray-400 rounded-xl">
+            {/* <div className="mb-6 p-3 border border-gray-400 rounded-xl">
                 <label className="mb-2 block font-bold text-xs">Guests</label>
 
                 <select 
@@ -141,6 +154,27 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
                 >
                     {guestsRange.map(number => (
                         <option key={number} value={number}>{number}</option>
+                    ))}
+                </select>
+            </div> */}
+
+            <div>
+                <label className="block mb-2 font-medium text-gray-700">
+                    Guests
+                </label>
+
+                <select
+                    value={guests}
+                    onChange={(e) => setGuests(e.target.value)}
+                    className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 focus:border-black focus:outline-none"
+                >
+                    {Array.from(
+                        { length: property.guests },
+                        (_, index) => index + 1
+                    ).map((number) => (
+                        <option key={number} value={number}>
+                            {number} {number === 1 ? "guest" : "guests"}
+                        </option>
                     ))}
                 </select>
             </div>

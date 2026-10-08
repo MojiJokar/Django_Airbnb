@@ -48,8 +48,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ['name',]
 
 # we will do it wih landlord  serliaer propertydeatailserlizer needs his part
-    # def avatar_url(self):
-    #     if self.avatar:
-    #         return f'{settings.WEBSITE_URL}{self.avatar.url}'
-    #     else:
-    #         return ''
+    def avatar_url(self):
+        if self.avatar:
+            return f'{settings.WEBSITE_URL}{self.avatar.url}'
+        else:
+            return ''

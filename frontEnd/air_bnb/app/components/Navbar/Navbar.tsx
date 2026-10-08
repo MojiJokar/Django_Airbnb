@@ -118,8 +118,9 @@ const Navbar = async () => {
                         <Image
                             src="/next.svg"
                             alt="DjangoBnb logo"
-                            width={180}
-                            height={20}
+                            width={100}
+                            height={1000}
+                            className="w-20 h-auto"
                         />
                     </Link>
 
